@@ -13,7 +13,7 @@ const Input = ({label, value, onChangeText, placeholder, secureTextEntry}) => {
                 autoCapitalize={'none'}
                 style={inputStyle}
                 value={value}
-                onChangeText={onChangeText}
+                onChangeText={ onChangeText }
 
             />
 
