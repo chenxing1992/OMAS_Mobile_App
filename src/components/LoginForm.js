@@ -8,7 +8,9 @@ class LoginForm extends Component {
     state = {
         email: '',
         password: '',
-        token: []
+        token: [],
+        loading: false,
+        error: ''
     };
 
     onButtonPress() {
@@ -32,6 +34,7 @@ class LoginForm extends Component {
                 }
             })
             .catch((err) => {
+                this.setState({error: 'Fail To Authenticate'})
                 console.log(err);
             });
     }
@@ -59,8 +62,9 @@ class LoginForm extends Component {
                     />
 
                 </CardSection>
-                <Text>
-                    {this.state.token.accesstoken}
+                <Text style={styles.errorTextStyle}>
+                    {/*{this.state.token.accesstoken}*/}
+                    {this.state.error}
                 </Text>
                 <CardSection>
                     <Button onPress={this.onButtonPress.bind(this)}>
@@ -71,6 +75,15 @@ class LoginForm extends Component {
         );
 
     }
-}
 
+}
+const styles ={
+    errorTextStyle:{
+        fontSize: 20,
+        alignSelf:'center',
+        color: 'red',
+        marginTop:10,
+        marginBottom:10
+    }
+};
 export default LoginForm;
