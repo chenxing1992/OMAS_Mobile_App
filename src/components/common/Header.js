@@ -16,16 +16,18 @@ const Header = (props) => {
 //Styling
 const styles = {
     textStyle: {
-        fontSize: 35
+        fontSize: 72,
+        fontWeight: '500',
+
 
     },
     viewStyle: {
-        backgroundColor: '#5671B6',
+        backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         height: 150,
         paddingTop: 15,
-        shadowColor: 'black',
+        shadowColor: 'white',
         shadowOffset: {width: 0, height: 10},
         shadowOpacity: 0.2,
         elevation: 2,
