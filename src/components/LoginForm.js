@@ -40,7 +40,7 @@ class LoginForm extends Component {
             return this.setState({
                 pwdValidation: 'Enter your password.',
                 loading: false
-            }); //check for empty email text field
+            }); //check for empty password text field
         }
         //validate email
         if (!this.validateEmail(this.state.email)) {
@@ -49,10 +49,16 @@ class LoginForm extends Component {
                 emailValidation: 'Please enter a valid email address.',
                 loading: false
             }); //check for empty email text field
+        } else if (!this.validateEmail(this.state.email) && password === '') {
+            return this.setState({
+                emailValidation: 'Please enter a valid email address.',
+                pwdValidation: 'Enter your password.',
+                loading: false
+            }); //check for invalid email and empty textfield
         }
 
 
-        this.setState({emailValidation: '', pwdValidation: '', loginValidation: '',loading: true});
+        this.setState({emailValidation: '', pwdValidation: '', loginValidation: '', loading: true});
 
         /** Execute authentication */
         axios.post(
@@ -135,8 +141,7 @@ class LoginForm extends Component {
 
             );
 
-        }
-        else if(loginValidation === 'Login Success'){
+        } else if (loginValidation === 'Login Success') {
 
             return (
                 <Text> Login Success</Text>
