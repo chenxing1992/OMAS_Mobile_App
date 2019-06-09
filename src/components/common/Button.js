@@ -19,18 +19,26 @@ const styles ={
       color: '#007aff',
       fontSize: 16,
       fontWeight: '600',
-      paddingTop: 10,
-      paddingBottom: 10
+      //paddingTop: 10,
+      //paddingBottom: 10
+        paddingTop: 12,
+        paddingBottom:12,
+
     },
   buttonStyle:{
-      flex:1,
-      alignSelf: 'stretch',
-      backgroundColor: '#fff',
-      borderRadius: 5,
+      //flex:1,
+      alignSelf: 'center',
+      //justifyContent: 'flex-end',
+      backgroundColor: '#F6D730',
+      borderRadius: 25,
       borderWidth: 1,
-      borderColor: '#5671B6',
-      marginLeft: 5,
-      marginRight:5
+      borderColor: '#F6D730',
+      width: '35%',
+
+
+     // marginLeft: 5,
+     // marginRight:5,
+
 
   }
 };

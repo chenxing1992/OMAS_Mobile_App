@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native';
+import {Text, View, Linking} from 'react-native';
 import {Button, Card, CardSection, Input, Spinner} from './common';
 import axios from 'axios';
 import querystring from 'query-string'
@@ -10,17 +10,49 @@ class LoginForm extends Component {
         password: '',
         token: [],
         loading: false,
-        error: ''
+        emailValidation: '',
+        pwdValidation: '',
+        loginValidation: ''
+    };
+    //validate email
+    validateEmail = (email) => {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
     };
 
+    //validate textfield entry and authenticate with server to retrieve token
     onButtonPress() {
         const {email, password} = this.state;
-        if (email === '' || password === '')
+        this.setState({emailValidation: '', pwdValidation: '', loginValidation: '', loading: true});
+        //validate empty textfields
+        if (email === '' && password === '') {
             return this.setState({
-                error: 'All TextField Required',
+                emailValidation: 'Enter your email address.',
+                pwdValidation: 'Enter your password.',
                 loading: false
             }); //check for empty textfield
-        this.setState({error: '', loading: true});
+        } else if (email === '') {
+            return this.setState({
+                emailValidation: 'Enter your email address.',
+                loading: false
+            }); //check for empty email text field
+        } else if (password === '') {
+            return this.setState({
+                pwdValidation: 'Enter your password.',
+                loading: false
+            }); //check for empty email text field
+        }
+        //validate email
+        if (!this.validateEmail(this.state.email)) {
+            // not a valid email
+            return this.setState({
+                emailValidation: 'Please enter a valid email address.',
+                loading: false
+            }); //check for empty email text field
+        }
+
+
+        this.setState({emailValidation: '', pwdValidation: '', loginValidation: '',loading: true});
 
         /** Execute authentication */
         axios.post(
@@ -43,25 +75,29 @@ class LoginForm extends Component {
                 }
             })
             .catch((err) => {
-                //this.setState({error: 'Fail To Authenticate'});
+                //this.setState({emailValidation: 'Fail To Authenticate'});
                 this.onLoginFail();
                 console.log(err);
             });
     }
 
+    //return loginValidation message upon failed login
     onLoginFail() {
+
         this.setState({
-            error: 'Fail To Authenticate',
+            loginValidation: 'Login Fail',
+
             loading: false
         });
     }
 
+    //return loginValidation message upon success login
     onLoginSuccess() {
         this.setState({
             email: '',
             password: '',
             loading: false,
-            error: 'Login Success'
+            loginValidation: 'Login Success'
         });
     }
 
@@ -79,13 +115,36 @@ class LoginForm extends Component {
         return (
 
             <Button onPress={this.onButtonPress.bind(this)}>
-                Log in
+                Login
             </Button>
         );
 
 
     }
 
+    renderValidation() {
+        const {loginValidation} = this.state;
+        if (loginValidation === 'Login Fail') {
+
+            return (
+
+
+                <Text style={styles.textStyle} onPress={() => Linking.openURL('https://stage.covacap.com/signup')}>
+                    You have typed an invalid Email or Password. In case you haven't signed up yet please Sign-up here.
+                </Text>
+
+            );
+
+        }
+        else if(loginValidation === 'Login Success'){
+
+            return (
+                <Text> Login Success</Text>
+            );
+        }
+
+
+    }
 
     render() {
         return (
@@ -98,6 +157,10 @@ class LoginForm extends Component {
                         onChangeText={email => this.setState({email})}
                     />
                 </CardSection>
+                <Text style={styles.errTbStyle}>
+                    {/*{this.state.token.accesstoken}*/}
+                    {this.state.emailValidation}
+                </Text>
                 <CardSection>
                     <Input
                         secureTextEntry={true}
@@ -108,13 +171,20 @@ class LoginForm extends Component {
                     />
 
                 </CardSection>
-                <Text style={styles.errorTextStyle}>
+                <Text style={styles.errTbStyle}>
                     {/*{this.state.token.accesstoken}*/}
-                    {this.state.error}
+                    {this.state.pwdValidation}
                 </Text>
-                <CardSection>
+                <Text style={styles.errLoginStyle}>
+                    {/*{this.state.token.accesstoken}*/}
+                    {/*{ this.state.loginValidation}*/}
+                    {this.renderValidation()}
+
+
+                </Text>
+                <View style={styles.buttonCardSection}>
                     {this.renderButton()}
-                </CardSection>
+                </View>
             </Card>
         );
 
@@ -124,12 +194,34 @@ class LoginForm extends Component {
 
 const
     styles = {
-        errorTextStyle: {
-            fontSize: 20,
-            alignSelf: 'center',
+        errTbStyle: {
+            fontSize: 11,
             color: 'red',
             marginTop: 10,
             marginBottom: 10
+        },
+        errLoginStyle: {
+            fontSize: 11,
+            color: 'red',
+            marginTop: 10,
+            marginBottom: 10
+        },
+        buttonCardSection: {
+
+            padding: 5,  //space at each side of the container
+            backgroundColor: '#fff',
+            justifyContent: 'flex-start',
+            flexDirection: 'row',
+            position: 'relative',
+            alignSelf: 'center',
+
+
+        },
+        textStyle: {
+
+            color: 'blue',
+            textDecorationLine: 'underline'
+
         }
     };
 export default LoginForm;
