@@ -1,15 +1,20 @@
 //import libraries for making a component
 import React from 'react';
-import { View, Image} from 'react-native';
+import { View, Image, TouchableHighlight, Linking} from 'react-native';
 import {LOGINLOGONAME} from '../common';
 //make a component
 const LoginLogoHeader = () => {
     const { viewStyle, logoStyle} = styles;
 
     return (
+
         <View style={viewStyle}>
+            <TouchableHighlight
+                onPress={() => Linking.openURL('https://stage.covacap.com/')}>
             <Image source={LOGINLOGONAME} style={logoStyle}/>
+            </TouchableHighlight>
         </View>
+
     );
 };
 
@@ -27,7 +32,8 @@ const styles = {
     },
     logoStyle:{
         position:'relative',
-        top:35
+        top:35,
+
     }
 
 

@@ -139,7 +139,7 @@ class LoginForm extends Component {
                         You have typed an invalid Email or Password. In case you haven't signed up yet please
                         Sign-up</Text>
                     <Text style={{color: 'blue', textDecorationLine: 'underline', fontSize: 11}}
-                          onPress={() => Linking.openURL('https://stage.covacap.com/signup')}>
+                          onPress={() => Linking.openURL('https://covacap.com/reset-password')}>
                         here.
                     </Text>
                 </View>
@@ -188,7 +188,7 @@ class LoginForm extends Component {
 
                 <View style={styles.linkingSection}>
                     <Text style={styles.linkingStyle}
-                          onPress={() => Linking.openURL('https://stage.covacap.com/signup')}>
+                          onPress={() => Linking.openURL('https://covacap.com/reset-password')}>
                         Forgot Password?
                     </Text>
                 </View>
