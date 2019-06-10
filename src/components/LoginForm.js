@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, Linking} from 'react-native';
+import {Text, View, Linking, TouchableHighlight} from 'react-native';
 import {Button, Card, CardSection, Input, Spinner} from './common';
 import axios from 'axios';
 import querystring from 'query-string'
@@ -134,10 +134,15 @@ class LoginForm extends Component {
 
             return (
 
-
-                <Text style={styles.textStyle} onPress={() => Linking.openURL('https://stage.covacap.com/signup')}>
-                    You have typed an invalid Email or Password. In case you haven't signed up yet please Sign-up here.
-                </Text>
+                <View>
+                    <Text style={{color: 'red', fontSize: 11}}>
+                        You have typed an invalid Email or Password. In case you haven't signed up yet please
+                        Sign-up</Text>
+                    <Text style={{color: 'blue', textDecorationLine: 'underline', fontSize: 11}}
+                          onPress={() => Linking.openURL('https://stage.covacap.com/signup')}>
+                        here.
+                    </Text>
+                </View>
 
             );
 
@@ -180,13 +185,21 @@ class LoginForm extends Component {
                     {/*{this.state.token.accesstoken}*/}
                     {this.state.pwdValidation}
                 </Text>
-                <Text style={styles.errLoginStyle}>
+
+                <View style={styles.linkingSection}>
+                    <Text style={styles.linkingStyle}
+                          onPress={() => Linking.openURL('https://stage.covacap.com/signup')}>
+                        Forgot Password?
+                    </Text>
+                </View>
+
+                <View style={styles.errLoginStyle}>
                     {/*{this.state.token.accesstoken}*/}
                     {/*{ this.state.loginValidation}*/}
                     {this.renderValidation()}
 
 
-                </Text>
+                </View>
                 <View style={styles.buttonCardSection}>
                     {this.renderButton()}
                 </View>
@@ -222,11 +235,21 @@ const
 
 
         },
-        textStyle: {
+        linkingSection: {
 
-            color: 'blue',
-            textDecorationLine: 'underline'
+            padding: 5,  //space at each side of the container
+            backgroundColor: '#fff',
+            justifyContent: 'flex-end',
+            flexDirection: 'row',
+            position: 'relative',
 
+
+        },
+
+        linkingStyle: {
+            color: '#a2a2a2',
+            fontFamily: 'Helvetica',
+            //textDecorationLine: 'underline'
         }
     };
 export default LoginForm;
