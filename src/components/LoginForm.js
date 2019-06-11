@@ -129,6 +129,7 @@ class LoginForm extends Component {
 
     }
 
+    //Return error message when user fail to sign in else send props to parent
     renderValidation() {
         const {loginValidation} = this.state;
         if (loginValidation === false) {
@@ -150,8 +151,9 @@ class LoginForm extends Component {
         } else if (loginValidation === true) {
 
             return (
-                <Text> Login Success</Text>
-            );
+
+                this.props.callBackFromParent(loginValidation)
+            )
         }
 
 
