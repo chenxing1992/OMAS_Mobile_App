@@ -1,17 +1,23 @@
 import React, {Component} from 'react'
 import {View} from 'react-native'
-import { Header, LoginLogoHeader }  from './components/common';
+import {Header, LoginLogoHeader} from './components/common';
 import LoginForm from './components/LoginForm';
 import DealBoardList from './components/DealBoardList';
 
 class App extends Component {
-    state ={
-        successfulLoggedIn: false
+    state = {
+        successfulLoggedIn: false,
+        token:''
     };
-    loggedIn  = (userStatus) => {
-        if(userStatus){
+    loggedIn = (userToken) => {
+        if (userToken) {
 
-        this.setState({successfulLoggedIn: true}) ;
+            this.setState({
+                successfulLoggedIn: true,
+                token: userToken
+
+
+            });
         }
     };
 
@@ -19,15 +25,15 @@ class App extends Component {
         if (this.state.successfulLoggedIn) {
             return (
                 <View>
-                <DealBoardList/>
+                    <DealBoardList userToken={this.state.token}/>
                 </View>
             );
         }
         return (
             <View>
-            <LoginLogoHeader />
-            <Header headerText ="Login" />
-        <LoginForm callBackFromParent={this.loggedIn.bind(this)}/>
+                <LoginLogoHeader/>
+                <Header headerText="Login"/>
+                <LoginForm callBackFromParent={this.loggedIn.bind(this)}/>
             </View>
         );
     };

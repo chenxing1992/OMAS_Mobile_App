@@ -152,7 +152,7 @@ class LoginForm extends Component {
 
             return (
 
-                this.props.callBackFromParent(loginValidation)
+                this.props.callBackFromParent(this.state.token.accesstoken)
             )
         }
 
