@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Text, View, Linking, TouchableHighlight} from 'react-native';
 import {Button, Card, CardSection, Input, Spinner} from './common';
 import axios from 'axios';
-import querystring from 'query-string'
+import querystring from 'query-string';
+
 
 class LoginForm extends Component {
     state = {
@@ -12,7 +13,7 @@ class LoginForm extends Component {
         loading: false,
         emailValidation: '',
         pwdValidation: '',
-        loginValidation: ''
+        loginValidation: null
     };
     //validate email
     validateEmail = (email) => {
@@ -23,7 +24,7 @@ class LoginForm extends Component {
     //validate textfield entry and authenticate with server to retrieve token
     onButtonPress() {
         const {email, password} = this.state;
-        this.setState({emailValidation: '', pwdValidation: '', loginValidation: '', loading: true});
+        this.setState({emailValidation: '', pwdValidation: '', loginValidation: null, loading: true});
         //validate empty textfields
         if (email === '' && password === '') {
             return this.setState({
@@ -58,7 +59,7 @@ class LoginForm extends Component {
         }
 
 
-        this.setState({emailValidation: '', pwdValidation: '', loginValidation: '', loading: true});
+        this.setState({emailValidation: '', pwdValidation: '', loginValidation: null, loading: true});
 
         /** Execute authentication */
         axios.post(
@@ -91,7 +92,7 @@ class LoginForm extends Component {
     onLoginFail() {
 
         this.setState({
-            loginValidation: 'Login Fail',
+            loginValidation: false,
 
             loading: false
         });
@@ -103,7 +104,7 @@ class LoginForm extends Component {
             email: '',
             password: '',
             loading: false,
-            loginValidation: 'Login Success'
+            loginValidation: true
         });
     }
 
@@ -130,7 +131,7 @@ class LoginForm extends Component {
 
     renderValidation() {
         const {loginValidation} = this.state;
-        if (loginValidation === 'Login Fail') {
+        if (loginValidation === false) {
 
             return (
 
@@ -146,7 +147,7 @@ class LoginForm extends Component {
 
             );
 
-        } else if (loginValidation === 'Login Success') {
+        } else if (loginValidation === true) {
 
             return (
                 <Text> Login Success</Text>
