@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, Linking, TouchableHighlight} from 'react-native';
+import {Text, View, Linking} from 'react-native';
 import {Button, Card, CardSection, Input, Spinner} from './common';
 import axios from 'axios';
 import querystring from 'query-string';

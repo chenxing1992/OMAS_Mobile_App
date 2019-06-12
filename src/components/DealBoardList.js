@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {ScrollView} from 'react-native';
 import axios from 'axios';
+import DealBoardDetails from './DealBoardDetails';
 
 class DealBoardList extends Component {
     state = {
         dealBoards: [],
-        userPrivateKey: '',
-        userToken: ''
     };
 
     componentWillMount() {
@@ -14,35 +13,39 @@ class DealBoardList extends Component {
         let jwtDecode = require('jwt-decode');
         let token = this.props.userToken;
         let decoded = jwtDecode(token);
-        this.setState({userPrivateKey: decoded.userPk, userToken: token})
-    }
+        //this.setState({userPrivateKey: decoded.userPk, userToken: token});
+
+        //const {userPrivateKey, userToken} = this.state;
+        const URL = `https://stage.covacap.com/listjson/deal?id=${decoded.userPk};tname=NOTIFICATIONS`;
+        //console.log('The url is: ' + userPrivateKey);
 
 
-    renderDealBoards() {
-        const {userPrivateKey, userToken} = this.state;
-        const URL = `https://stage.covacap.com/listjson/deal?id=${userPrivateKey};tname=NOTIFICATIONS`;
-        console.log('The url is: ' + userPrivateKey);
-
-
-        axios.get(URL, {headers: {'xauth-token': userToken}})
+        axios.get(URL, {headers: {'xauth-token': token}})
             .then(response => {
                 // If request is good...
                 console.log(response.data);
-                this.setState({token: response.data})
+                return this.setState({dealBoards: response.data})
             })
             .catch((error) => {
                 console.log('error ' + error);
             });
+
+
+    }
+
+
+    renderDealBoards() {
+        return this.state.dealBoards.map(deal =>
+            <DealBoardDetails key={deal.Deal_Pk} deal={deal}/>
+        );
     }
 
 
     render() {
         return (
-            <View>
-                <Text>
-                    {this.renderDealBoards()}
-                </Text>
-            </View>
+            <ScrollView>
+                {this.renderDealBoards()}
+            </ScrollView>
         );
     }
 }
