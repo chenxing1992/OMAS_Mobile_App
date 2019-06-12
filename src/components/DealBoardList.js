@@ -1,27 +1,55 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
+import axios from 'axios';
 
 class DealBoardList extends Component {
     state = {
-        jwtElements: [],
-        dealBoards: []
+        dealBoards: [],
+        userPrivateKey: '',
+        userToken: ''
     };
 
-    decodeJWT = () => {
+    componentWillMount() {
+
         let jwtDecode = require('jwt-decode');
         let token = this.props.userToken;
         let decoded = jwtDecode(token);
-        return <Text> {decoded.userPk}</Text>
+        this.setState({userPrivateKey: decoded.userPk, userToken: token})
+    }
 
 
-    };
+    renderDealBoards() {
+        const {userPrivateKey, userToken} = this.state;
+        const URL = `https://stage.covacap.com/listjson/deal?id=${userPrivateKey};tname=NOTIFICATIONS`;
+        console.log('The url is: ' + userPrivateKey);
+
+        // const headers = {
+        //     'headers': {
+        //         //'Content-Type': 'application/json',
+        //         // 'Access-Control-Allow-Headers': 'xauth-token',
+        //         'xauth-token': userToken
+        //     }
+        // };
+        //console.log('The header is: ' + headers);
+
+        axios.get(URL, {headers: {'xauth-token': userToken}})
+            .then(response => {
+                // If request is good...
+                console.log(response.data);
+                this.setState({token:response.data})
+            })
+            .catch((error) => {
+                console.log('error ' + error);
+            });
+    }
+
 
     render() {
         return (
             <View>
-
-                {this.decodeJWT()}
-
+                <Text>
+                    {this.renderDealBoards()}
+                </Text>
             </View>
         );
     }
