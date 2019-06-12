@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {LoginCard, LoginCardSection} from './common';
+import {Card, LoginCardSection} from './common';
+
 
 const DealBoardDetails = ({deal}) => {
     const {Deal_Pk, User_Fk, Fis_Issuer_Fk, Content_Firstline, Content_Sec_Line, Dflag, Noofmins, Notice_Time, IDENT} = deal;
     return (
-        <LoginCard>
+
+
+        <Card>
             <LoginCardSection>
                 <Text> {Deal_Pk}</Text>
             </LoginCardSection>
@@ -33,7 +36,7 @@ const DealBoardDetails = ({deal}) => {
             <LoginCardSection>
                 <Text> {IDENT}</Text>
             </LoginCardSection>
-        </LoginCard>
+        </Card>
 
     );
 

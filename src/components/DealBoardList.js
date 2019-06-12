@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {ScrollView} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import axios from 'axios';
+import { DbHeader} from './common';
 import DealBoardDetails from './DealBoardDetails';
 
 class DealBoardList extends Component {
@@ -43,9 +44,12 @@ class DealBoardList extends Component {
 
     render() {
         return (
+            <View>
+                <DbHeader/>
             <ScrollView>
                 {this.renderDealBoards()}
             </ScrollView>
+            </View>
         );
     }
 }

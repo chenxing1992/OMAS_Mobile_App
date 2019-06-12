@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, Linking} from 'react-native';
-import {LoginButton, LoginCard, LoginCardSection, Input, Spinner} from './common';
+import {LoginButton, Card, LoginCardSection, Input, Spinner} from './common';
 import axios from 'axios';
 import querystring from 'query-string';
 
@@ -161,7 +161,7 @@ class LoginForm extends Component {
 
     render() {
         return (
-            <LoginCard>
+            <Card>
                 <LoginCardSection>
                     <Input
                         secureTextEntry={false}
@@ -206,7 +206,7 @@ class LoginForm extends Component {
                 <View style={styles.buttonCardSection}>
                     {this.renderButton()}
                 </View>
-            </LoginCard>
+            </Card>
         );
 
     }
