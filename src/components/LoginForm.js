@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, Linking} from 'react-native';
-import {Button, Card, CardSection, Input, Spinner} from './common';
+import {LoginButton, LoginCard, LoginCardSection, Input, Spinner} from './common';
 import axios from 'axios';
 import querystring from 'query-string';
 
@@ -121,9 +121,9 @@ class LoginForm extends Component {
         }
         return (
 
-            <Button onPress={this.onButtonPress.bind(this)}>
+            <LoginButton onPress={this.onButtonPress.bind(this)}>
                 Login
-            </Button>
+            </LoginButton>
         );
 
 
@@ -161,20 +161,20 @@ class LoginForm extends Component {
 
     render() {
         return (
-            <Card>
-                <CardSection>
+            <LoginCard>
+                <LoginCardSection>
                     <Input
                         secureTextEntry={false}
                         placeholder="Email Address*"
                         value={this.state.email}
                         onChangeText={email => this.setState({email})}
                     />
-                </CardSection>
+                </LoginCardSection>
                 <Text style={styles.errTbStyle}>
                     {/*{this.state.token.accesstoken}*/}
                     {this.state.emailValidation}
                 </Text>
-                <CardSection>
+                <LoginCardSection>
                     <Input
                         secureTextEntry={true}
                         placeholder="Password*"
@@ -183,7 +183,7 @@ class LoginForm extends Component {
 
                     />
 
-                </CardSection>
+                </LoginCardSection>
                 <Text style={styles.errTbStyle}>
                     {/*{this.state.token.accesstoken}*/}
                     {this.state.pwdValidation}
@@ -206,7 +206,7 @@ class LoginForm extends Component {
                 <View style={styles.buttonCardSection}>
                     {this.renderButton()}
                 </View>
-            </Card>
+            </LoginCard>
         );
 
     }

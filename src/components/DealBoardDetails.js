@@ -1,39 +1,39 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {Card, CardSection} from './common';
+import {LoginCard, LoginCardSection} from './common';
 
 const DealBoardDetails = ({deal}) => {
     const {Deal_Pk, User_Fk, Fis_Issuer_Fk, Content_Firstline, Content_Sec_Line, Dflag, Noofmins, Notice_Time, IDENT} = deal;
     return (
-        <Card>
-            <CardSection>
+        <LoginCard>
+            <LoginCardSection>
                 <Text> {Deal_Pk}</Text>
-            </CardSection>
-            <CardSection>
+            </LoginCardSection>
+            <LoginCardSection>
                 <Text> {User_Fk}</Text>
-            </CardSection>
-            <CardSection>
+            </LoginCardSection>
+            <LoginCardSection>
                 <Text> {Fis_Issuer_Fk}</Text>
-            </CardSection>
-            <CardSection>
+            </LoginCardSection>
+            <LoginCardSection>
                 <Text> {Content_Firstline}</Text>
-            </CardSection>
-            <CardSection>
+            </LoginCardSection>
+            <LoginCardSection>
                 <Text> {Content_Sec_Line}</Text>
-            </CardSection>
-            <CardSection>
+            </LoginCardSection>
+            <LoginCardSection>
                 <Text> {Dflag}</Text>
-            </CardSection>
-            <CardSection>
+            </LoginCardSection>
+            <LoginCardSection>
                 <Text> {Noofmins}</Text>
-            </CardSection>
-            <CardSection>
+            </LoginCardSection>
+            <LoginCardSection>
                 <Text> {Notice_Time}</Text>
-            </CardSection>
-            <CardSection>
+            </LoginCardSection>
+            <LoginCardSection>
                 <Text> {IDENT}</Text>
-            </CardSection>
-        </Card>
+            </LoginCardSection>
+        </LoginCard>
 
     );
 

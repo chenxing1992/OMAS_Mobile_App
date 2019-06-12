@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {View} from 'react-native'
-import {Header, LoginLogoHeader} from './components/common';
+import {LoginHeader, LoginLogoHeader} from './components/common';
 import LoginForm from './components/LoginForm';
 import DealBoardList from './components/DealBoardList';
 
@@ -32,7 +32,7 @@ class App extends Component {
         return (
             <View>
                 <LoginLogoHeader/>
-                <Header headerText="Login"/>
+                <LoginHeader headerText="Login"/>
                 <LoginForm callBackFromParent={this.loggedIn.bind(this)}/>
             </View>
         );

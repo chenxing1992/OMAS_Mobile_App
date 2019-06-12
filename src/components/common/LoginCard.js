@@ -1,7 +1,7 @@
 import React from 'react'
 import {View} from 'react-native';
 
-const Card = (props) => {
+const LoginCard = (props) => {
     return (
 
         <View style={styles.containerStyle}>
@@ -26,4 +26,4 @@ const styles = {
     }
 
 };
-export {Card};
+export {LoginCard};
