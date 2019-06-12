@@ -23,20 +23,12 @@ class DealBoardList extends Component {
         const URL = `https://stage.covacap.com/listjson/deal?id=${userPrivateKey};tname=NOTIFICATIONS`;
         console.log('The url is: ' + userPrivateKey);
 
-        // const headers = {
-        //     'headers': {
-        //         //'Content-Type': 'application/json',
-        //         // 'Access-Control-Allow-Headers': 'xauth-token',
-        //         'xauth-token': userToken
-        //     }
-        // };
-        //console.log('The header is: ' + headers);
 
         axios.get(URL, {headers: {'xauth-token': userToken}})
             .then(response => {
                 // If request is good...
                 console.log(response.data);
-                this.setState({token:response.data})
+                this.setState({token: response.data})
             })
             .catch((error) => {
                 console.log('error ' + error);
