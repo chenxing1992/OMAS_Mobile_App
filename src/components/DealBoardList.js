@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import {View, ScrollView} from 'react-native';
+import {View, ScrollView, TouchableHighlight,Linking,Image} from 'react-native';
 import axios from 'axios';
-import { DbHeader} from './common';
+import { DbHeader,DBLOGO, SIGNOUT} from './common';
 import DealBoardDetails from './DealBoardDetails';
 
 class DealBoardList extends Component {
     state = {
         dealBoards: [],
+       // userLogout: false,
     };
 
     componentWillMount() {
@@ -41,11 +42,30 @@ class DealBoardList extends Component {
         );
     }
 
+    renderLogout = () => {
+        console.log('user click on log out button');
+        this.props.ToLogOut(true);
+
+     };
+   
+
 
     render() {
+        const {logoStyle,signOutStyle} = styles;
         return (
             <View>
-                <DbHeader/>
+                <DbHeader >
+                    <TouchableHighlight
+                        onPress={() => Linking.openURL('https://stage.covacap.com/')}>
+                        <Image source={DBLOGO} style={logoStyle}/>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+
+                        onPress={() =>  {this.renderLogout()}}>
+                        <Image source={SIGNOUT} style={signOutStyle}/>
+                    </TouchableHighlight>
+                </DbHeader>
+                {/*<DbHeader/>*/}
             <ScrollView>
                 {this.renderDealBoards()}
             </ScrollView>
@@ -53,5 +73,24 @@ class DealBoardList extends Component {
         );
     }
 }
+const styles ={
+    logoStyle:{
+        position:'relative',
+        top:15,
+        bottom:10
+
+
+    },
+    signOutStyle:{
+        position:'relative',
+        width: 40,
+        height:40,
+        top:15,
+        right:10,
+        bottom:10
+
+
+    }
+};
 
 export default DealBoardList;

@@ -20,12 +20,27 @@ class App extends Component {
             });
         }
     };
+    LogOut = (toLogout) =>{
+        console.log('hello world');
+        if(toLogout){
+            this.setState({
+                successfulLoggedIn: false,
+                token: ''
+
+            });
+
+        }
+
+
+    };
 
     renderContent = () => {
         if (this.state.successfulLoggedIn) {
             return (
                 <View>
-                    <DealBoardList userToken={this.state.token}/>
+                    <DealBoardList userToken={this.state.token} ToLogOut={this.LogOut.bind(this)} />
+
+                    {/*<DealBoardList userToken={this.state.token}  />*/}
                 </View>
             );
         }

@@ -1,19 +1,15 @@
 //import libraries for making a component
 import React from 'react';
-import { View, Image, TouchableHighlight, Linking} from 'react-native';
-import {LOGINLOGONAME} from '../common';
+import {View} from 'react-native';
 //make a component
-const DbHeader = () => {
-    const { viewStyle, logoStyle} = styles;
-
+const DbHeader = (props) => {
+    const {viewStyle} = styles;
     return (
 
         <View style={viewStyle}>
-            <TouchableHighlight
-                onPress={() => Linking.openURL('https://stage.covacap.com/')}>
-                <Image source={LOGINLOGONAME} style={logoStyle}/>
-            </TouchableHighlight>
+            {props.children}
         </View>
+
 
     );
 };
@@ -22,19 +18,16 @@ const DbHeader = () => {
 const styles = {
 
     viewStyle: {
-        backgroundColor: 'white',
-        height: 150,
-        paddingTop: 15,
-        paddingLeft:30,
+        backgroundColor: '#6e83b2',
+        height: 100,
+        paddingTop: 35,
+        paddingLeft: 20,
         elevation: 2,
         position: 'relative',
-        justifyContent: 'center',
-    },
-    logoStyle:{
-        position:'relative',
-        top:35,
-
+        justifyContent: 'space-between',
+        flexDirection: 'row'
     }
+
 
 
 };

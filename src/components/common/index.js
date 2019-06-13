@@ -7,4 +7,5 @@ export * from './Spinner';
 export * from './LoginLogoHeader';
 export * from './DbHeader';
 export const LOGINLOGONAME = require('../assets/images/logo_blue_medium.png');
-export const DBLOGO= require('../assets/images/logo_white.svg');
+export const DBLOGO= require('../assets/images/logo_white.png');
+export const SIGNOUT= require('../assets/images/sign_out_icon.png');
