@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, ScrollView, TouchableHighlight,Linking,Image} from 'react-native';
 import axios from 'axios';
-import { DbHeader,DBLOGO, SIGNOUT} from './common';
+import { DbHeader, DbSubHeader, DBLOGO, SIGNOUT, DbSHButton} from './common';
 import DealBoardDetails from './DealBoardDetails';
 
 class DealBoardList extends Component {
@@ -47,7 +47,11 @@ class DealBoardList extends Component {
         this.props.ToLogOut(true);
 
      };
-   
+
+    onPress(){
+        Linking.openURL('https://covacap.com/signin')
+
+    };
 
 
     render() {
@@ -65,7 +69,11 @@ class DealBoardList extends Component {
                         <Image source={SIGNOUT} style={signOutStyle}/>
                     </TouchableHighlight>
                 </DbHeader>
-                {/*<DbHeader/>*/}
+                <DbSubHeader>
+                    <DbSHButton onPress={ ()=>{ Linking.openURL('https://covacap.com/signin')}}> Nucleus</DbSHButton>
+                        <DbSHButton onPress={()=>{ Linking.openURL('https://covacap.com/signin')}}>Home</DbSHButton>
+                    <DbSHButton onPress={()=>{ Linking.openURL('https://covacap.com/signin')}}> Analytics</DbSHButton>
+                </DbSubHeader>
             <ScrollView>
                 {this.renderDealBoards()}
             </ScrollView>
