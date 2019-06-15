@@ -233,7 +233,7 @@ const
             backgroundColor: '#fff',
             justifyContent: 'flex-start',
             flexDirection: 'row',
-            position: 'relative',
+            subTitle: 'relative',
             alignSelf: 'center',
 
 
@@ -244,7 +244,7 @@ const
             backgroundColor: '#fff',
             justifyContent: 'flex-end',
             flexDirection: 'row',
-            position: 'relative',
+            subTitle: 'relative',
 
 
         },

@@ -24,7 +24,7 @@ const styles = {
         paddingLeft: 10,
         paddingRight: 10,
         elevation: 2,
-        position: 'relative',
+        subTitle: 'relative',
         justifyContent: 'space-between',
         flexDirection: 'row',
        // flex:1

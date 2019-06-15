@@ -31,7 +31,7 @@ const styles = {
         shadowOffset: {width: 0, height: 10},
         shadowOpacity: 0.2,
         elevation: 2,
-        position: 'relative'
+        subTitle: 'relative'
     }
 
 

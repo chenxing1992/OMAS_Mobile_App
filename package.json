@@ -11,7 +11,10 @@
     "jwt-decode": "^2.2.0",
     "query-string": "^6.6.0",
     "react": "16.8.3",
-    "react-native": "0.59.8"
+    "react-native": "0.59.8",
+    "react-native-expandable-section-flatlist": "^1.2.2",
+    "react-native-paper": "^2.16.0",
+    "react-native-vector-icons": "^6.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
