@@ -7,7 +7,7 @@ import DealBoardList from './components/DealBoardList';
 class App extends Component {
     state = {
         successfulLoggedIn: false,
-        token:''
+        token: ''
     };
     loggedIn = (userToken) => {
         if (userToken) {
@@ -20,9 +20,9 @@ class App extends Component {
             });
         }
     };
-    LogOut = (toLogout) =>{
+    LogOut = (toLogout) => {
         console.log('hello world');
-        if(toLogout){
+        if (toLogout) {
             this.setState({
                 successfulLoggedIn: false,
                 token: ''
@@ -38,7 +38,7 @@ class App extends Component {
         if (this.state.successfulLoggedIn) {
             return (
                 <View>
-                    <DealBoardList userToken={this.state.token} ToLogOut={this.LogOut.bind(this)} />
+                    <DealBoardList userToken={this.state.token} ToLogOut={this.LogOut.bind(this)}/>
 
                     {/*<DealBoardList userToken={this.state.token}  />*/}
                 </View>
@@ -56,7 +56,6 @@ class App extends Component {
     render() {
         return (
             <View>
-
                 {this.renderContent()}
             </View>
 

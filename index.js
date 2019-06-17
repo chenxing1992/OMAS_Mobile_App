@@ -3,16 +3,15 @@
  */
 import * as React from 'react';
 import {AppRegistry, View} from 'react-native';
-import { Provider as PaperProvider } from 'react-native-paper';
 import App from './src/App';
 import {name as appName} from './app.json';
 
 export default function Main() {
     return (
 
-        <PaperProvider>
+        <View style={{flex: 1}}>
             <App />
-        </PaperProvider>
+        </View>
 
     );
 }

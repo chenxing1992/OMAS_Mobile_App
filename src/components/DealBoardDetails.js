@@ -1,20 +1,14 @@
 import React, {Component} from 'react';
 import {
     View,
-    ScrollView,
-    TouchableHighlight,
-    Linking,
     Image,
     Alert,
-    LayoutAnimation,
-    StyleSheet,
     Text,
-    UIManager,
     TouchableOpacity,
     Platform
 } from 'react-native';
-import {Card, LoginCardSection} from './common';
 
+import {DbFooter} from './common';
 
 class DealBoardDetails extends Component {
     //const {Deal_Pk, User_Fk, Fis_Issuer_Fk, Content_Firstline, Content_Sec_Line, Dflag, Noofmins, Notice_Time, IDENT} = deal;
@@ -30,8 +24,7 @@ class DealBoardDetails extends Component {
                     layout_Height: null
                 }
             });
-        }
-        else {
+        } else {
             this.setState(() => {
                 return {
                     layout_Height: 0
@@ -53,61 +46,58 @@ class DealBoardDetails extends Component {
     };
 
 
-
     render() {
-       // const {logoStyle,signOutStyle} = styles;
+        // const {logoStyle,signOutStyle} = styles;
         return (
+            <View>
             <View style={styles.MainContainer}>
                 {/*Start of header*/}
                 <TouchableOpacity activeOpacity={0.8} onPress={this.props.onClickFunction} style={styles.category_View}>
 
-                    <View style={{flex:1, justifyContent:'space-between'}}>
-                    <Text style={{ flexWrap:'wrap'}}>{this.props.item.title} </Text>
-                        <Text style={{  flexWrap:'wrap', paddingTop:5, color:'#A9A9A9' }}> {this.props.item.subTitle} </Text>
-                        <View  style={{ paddingTop:10 , alignItems:'flex-start', flexWrap:'wrap' }} >
+                    <View style={{flex: 1, justifyContent: 'space-between'}}>
+                        <Text style={{flexWrap: 'wrap'}}>{this.props.item.title} </Text>
+                        <Text style={{
+                            flexWrap: 'wrap',
+                            paddingTop: 5,
+                            color: '#A9A9A9'
+                        }}> {this.props.item.subTitle} </Text>
+                        <View style={{paddingTop: 10, alignItems: 'flex-start', flexWrap: 'wrap'}}>
 
 
-
-                                  
-                                <Text style={{}}> 6:00pm  </Text>
-                                <Text style={{}}> Size: USD 100mm | Deal Details: https://tinyurl.com/VCREDITHoldings  </Text>
-
+                            <Text style={{}}> 6:00pm </Text>
+                            <Text style={{}}> Size: USD 100mm | Deal Details:
+                                https://tinyurl.com/VCREDITHoldings </Text>
 
 
                         </View>
                     </View>
-                    <View  style={{ }} >
-                        <Text style={{ }}> {this.props.item.publishDate}  </Text>
+                    <View style={{}}>
+                        <Text style={{}}> {this.props.item.publishDate}  </Text>
 
-                        <Text style={{ paddingLeft:5, color:'#25CB25'}}>{this.props.item.status} </Text>
+                        <Text style={{paddingLeft: 5, color: '#25CB25'}}>{this.props.item.status} </Text>
                     </View>
 
 
                     <Image
-                        source={{ uri: 'https://reactnativecode.com/wp-content/uploads/2019/02/arrow_right_icon.png' }}
-                        style={styles.iconStyle} />
-
-
-
-
-
-
+                        source={{uri: 'https://reactnativecode.com/wp-content/uploads/2019/02/arrow_right_icon.png'}}
+                        style={styles.iconStyle}/>
 
 
                 </TouchableOpacity>
                 {/*End of Header*/}
                 {/*Start of Section Body*/}
-                <View style={{ height: this.state.layout_Height, overflow: 'hidden' }}>
+                <View style={{height: this.state.layout_Height, overflow: 'hidden'}}>
 
                     {
                         this.props.item.sub_Category.map((item, key) => (
 
-                            <TouchableOpacity key={key} style={styles.sub_Category_Text} onPress={this.show_Selected_Category.bind(this, item.title)}>
+                            <TouchableOpacity key={key} style={styles.sub_Category_Text}
+                                              onPress={this.show_Selected_Category.bind(this, item.title)}>
 
-                                <Text style={{color:'1E5AFF'}}> {item.firstTime} </Text>
-                                <Text style={{paddingTop:10, flexWrap:'wrap'}}> {item.details} </Text>
+                                <Text style={{color: '1E5AFF'}}> {item.firstTime} </Text>
+                                <Text style={{paddingTop: 10, flexWrap: 'wrap'}}> {item.details} </Text>
 
-                                <View style={{ width: '100%', height: 1, backgroundColor: '#000' }} />
+                                <View style={{width: '100%', height: 1, backgroundColor: '#000'}}/>
 
                             </TouchableOpacity>
 
@@ -118,26 +108,28 @@ class DealBoardDetails extends Component {
                 {/*End of Section body*/}
 
             </View>
-
+        <DbFooter dealID={this.props.item.dealId}/>
+        </View>
         );
     }
 
 }
-const styles ={
-    logoStyle:{
-        subTitle:'relative',
-        top:15,
-        bottom:10
+
+const styles = {
+    logoStyle: {
+        subTitle: 'relative',
+        top: 15,
+        bottom: 10
 
 
     },
-    signOutStyle:{
-        subTitle:'relative',
+    signOutStyle: {
+        subTitle: 'relative',
         width: 40,
-        height:40,
-        top:15,
-        right:10,
-        bottom:10
+        height: 40,
+        top: 15,
+        right: 10,
+        bottom: 10
 
 
     },
@@ -151,7 +143,7 @@ const styles ={
     },
 
     iconStyle: {
-        paddingTop:5,
+        paddingTop: 5,
         width: 30,
         height: 30,
         justifyContent: 'flex-end',
@@ -181,10 +173,6 @@ const styles ={
         backgroundColor: '#fff'
     },
 
-    Btn: {
-        padding: 10,
-        backgroundColor: '#FF6F00'
-    }
 };
 
 export default DealBoardDetails;

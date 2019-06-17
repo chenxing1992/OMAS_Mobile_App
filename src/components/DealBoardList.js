@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
-import {View, ScrollView, TouchableHighlight,Linking,Image, Alert, LayoutAnimation, StyleSheet, Text, UIManager, TouchableOpacity, Platform } from 'react-native';
+import {
+    View,
+    ScrollView,
+    TouchableHighlight,
+    Linking,
+    Image,
+    LayoutAnimation,
+    Platform
+} from 'react-native';
 import axios from 'axios';
-import { DbHeader, DbSubHeader, DBLOGO, SIGNOUT, DbSHButton} from './common';
+import {DbHeader, DbSubHeader, DbFooter, DBLOGO, SIGNOUT, DbSHButton} from './common';
 import DealBoardDetails from './DealBoardDetails';
 import SearchBar from './SearchBar';
 
@@ -10,10 +18,10 @@ class DealBoardList extends Component {
     constructor() {
         super();
 
-       const array = [
+        const array = [
             {
                 title: 'DEAL - Keppel Corporation Limited 5Y | 10Y SGD REGS ',
-
+                dealId: 12345,
                 publishDate: '14 Sept',
                 status: 'Revised',
                 subTitle: 'Sole LeadManager & Bookrunner: OCBC',
@@ -29,7 +37,7 @@ class DealBoardList extends Component {
             },
             {
                 title: 'Mandate - PT Gajah Tunggal',
-
+                dealId: 12345,
                 publishDate: '14 Sept',
                 status: 'New',
                 subTitle: '',
@@ -40,51 +48,7 @@ class DealBoardList extends Component {
             },
             {
                 title: 'DEAL - Keppel Corporation Limited',
-
-                publishDate: '14 Sept',
-                status: 'Revised',
-                subTitle: 'Sole LeadManager & Bookrunner: OCBC',
-                sub_Category: [{
-                    firstTime: '4:00pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
-                },
-            {
-                title: 'Mandate - PT Gajah Tunggal',
-
-                publishDate: '14 Sept',
-                status: 'New',
-                subTitle: '',
-                sub_Category: [{
-                    firstTime: '9:30pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
-            },
-            {
-                title: 'DEAL - Keppel Corporation Limited',
-
-                publishDate: '14 Sept',
-                status: 'Revised',
-                subTitle: 'Sole LeadManager & Bookrunner: OCBC',
-                sub_Category: [{
-                    firstTime: '4:00pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
-                },
-            {
-                title: 'Mandate - PT Gajah Tunggal',
-
-                publishDate: '14 Sept',
-                status: 'New',
-                subTitle: '',
-                sub_Category: [{
-                    firstTime: '9:30pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
-                },
-            {
-                title: 'DEAL - Keppel Corporation Limited',
-
+                dealId: 12345,
                 publishDate: '14 Sept',
                 status: 'Revised',
                 subTitle: 'Sole LeadManager & Bookrunner: OCBC',
@@ -95,7 +59,7 @@ class DealBoardList extends Component {
             },
             {
                 title: 'Mandate - PT Gajah Tunggal',
-
+                dealId: 12345,
                 publishDate: '14 Sept',
                 status: 'New',
                 subTitle: '',
@@ -106,7 +70,51 @@ class DealBoardList extends Component {
             },
             {
                 title: 'DEAL - Keppel Corporation Limited',
-
+                dealId: 12345,
+                publishDate: '14 Sept',
+                status: 'Revised',
+                subTitle: 'Sole LeadManager & Bookrunner: OCBC',
+                sub_Category: [{
+                    firstTime: '4:00pm',
+                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
+                }]
+            },
+            {
+                title: 'Mandate - PT Gajah Tunggal',
+                dealId: 12345,
+                publishDate: '14 Sept',
+                status: 'New',
+                subTitle: '',
+                sub_Category: [{
+                    firstTime: '9:30pm',
+                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
+                }]
+            },
+            {
+                title: 'DEAL - Keppel Corporation Limited',
+                dealId: 12345,
+                publishDate: '14 Sept',
+                status: 'Revised',
+                subTitle: 'Sole LeadManager & Bookrunner: OCBC',
+                sub_Category: [{
+                    firstTime: '4:00pm',
+                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
+                }]
+            },
+            {
+                title: 'Mandate - PT Gajah Tunggal',
+                dealId: 12345,
+                publishDate: '14 Sept',
+                status: 'New',
+                subTitle: '',
+                sub_Category: [{
+                    firstTime: '9:30pm',
+                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
+                }]
+            },
+            {
+                title: 'DEAL - Keppel Corporation Limited',
+                dealId: 12345,
                 publishDate: '14 Sept',
                 status: 'Revised',
                 subTitle: 'Sole LeadManager & Bookrunner: OCBC',
@@ -117,7 +125,7 @@ class DealBoardList extends Component {
             },
             {
                 title: 'DEAL - Keppel Corporation Limited',
-
+                dealId: 12345,
                 publishDate: '14 Sept',
                 status: 'Revised',
                 subTitle: 'Sole LeadManager & Bookrunner: OCBC',
@@ -150,7 +158,6 @@ class DealBoardList extends Component {
     };
 
 
-
     componentWillMount() {
 
         let jwtDecode = require('jwt-decode');
@@ -178,12 +185,13 @@ class DealBoardList extends Component {
 
 
     renderDealBoards() {
-return(
-        this.state.AccordionData.map((item, key) =>
-            (
-                <DealBoardDetails key={item.title} onClickFunction={this.update_Layout.bind(this, key)} item={item} />
-            ))
-);
+        return (
+            this.state.AccordionData.map((item, key) =>
+                (
+                    <DealBoardDetails key={item.title} onClickFunction={this.update_Layout.bind(this, key)}
+                                      item={item}/>
+                ))
+        );
         // return this.state.dealBoards.map(deal =>
         //     <DealBoardDetails key={deal.Deal_Pk} deal={deal}/>
         // );
@@ -193,53 +201,63 @@ return(
         console.log('user click on log out button');
         this.props.ToLogOut(true);
 
-     };
-
+    };
 
 
     render() {
-        const {logoStyle,signOutStyle} = styles;
+        const {logoStyle, signOutStyle} = styles;
         return (
-            <View>
-                <DbHeader >
+            <View >
+                <DbHeader>
                     <TouchableHighlight
                         onPress={() => Linking.openURL('https://stage.covacap.com/')}>
                         <Image source={DBLOGO} style={logoStyle}/>
                     </TouchableHighlight>
                     <TouchableHighlight
 
-                        onPress={() =>  {this.renderLogout()}}>
+                        onPress={() => {
+                            this.renderLogout()
+                        }}>
                         <Image source={SIGNOUT} style={signOutStyle}/>
                     </TouchableHighlight>
                 </DbHeader>
                 <DbSubHeader>
-                    <DbSHButton onPress={ ()=>{ Linking.openURL('https://covacap.com/signin')}}> Nucleus</DbSHButton>
-                        <DbSHButton onPress={()=>{ Linking.openURL('https://covacap.com/signin')}}>Home</DbSHButton>
-                    <DbSHButton onPress={()=>{ Linking.openURL('https://covacap.com/signin')}}> Analytics</DbSHButton>
+                    <DbSHButton onPress={() => {
+                        Linking.openURL('https://covacap.com/signin')
+                    }}> Nucleus</DbSHButton>
+                    <DbSHButton onPress={() => {
+                        Linking.openURL('https://covacap.com/signin')
+                    }}>Home</DbSHButton>
+                    <DbSHButton onPress={() => {
+                        Linking.openURL('https://covacap.com/signin')
+                    }}> Analytics</DbSHButton>
                 </DbSubHeader>
-                <SearchBar/>
-            <ScrollView contentContainerStyle={{ paddingHorizontal: 10, paddingVertical: 5 }}>
-                {this.renderDealBoards()}
-            </ScrollView>
+
+                {/*<SearchBar/>*/}
+                <ScrollView contentContainerStyle={{paddingHorizontal: 10, paddingVertical: 5} }>
+                    {this.renderDealBoards()}
+                </ScrollView>
+
             </View>
         );
     }
 }
-const styles ={
-    logoStyle:{
-        subTitle:'relative',
-        top:15,
-        bottom:10
+
+const styles = {
+    logoStyle: {
+        subTitle: 'relative',
+        top: 15,
+        bottom: 10
 
 
     },
-    signOutStyle:{
-        subTitle:'relative',
+    signOutStyle: {
+        subTitle: 'relative',
         width: 40,
-        height:40,
-        top:15,
-        right:10,
-        bottom:10
+        height: 40,
+        top: 15,
+        right: 10,
+        bottom: 10
 
 
     },
@@ -282,10 +300,6 @@ const styles ={
         backgroundColor: '#0091EA'
     },
 
-    Btn: {
-        padding: 10,
-        backgroundColor: '#FF6F00'
-    }
 };
 
 export default DealBoardList;
