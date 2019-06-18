@@ -9,7 +9,7 @@ import {name as appName} from './app.json';
 export default function Main() {
     return (
 
-        <View style={{flex: 1}}>
+        <View>
             <App />
         </View>
 

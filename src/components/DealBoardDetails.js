@@ -5,10 +5,10 @@ import {
     Alert,
     Text,
     TouchableOpacity,
-    Platform
+    Platform, TouchableHighlight, Linking
 } from 'react-native';
 
-import {DbFooter} from './common';
+import {DbFooter, DbHeader} from './common';
 
 class DealBoardDetails extends Component {
     //const {Deal_Pk, User_Fk, Fis_Issuer_Fk, Content_Firstline, Content_Sec_Line, Dflag, Noofmins, Notice_Time, IDENT} = deal;
@@ -49,6 +49,7 @@ class DealBoardDetails extends Component {
     render() {
         // const {logoStyle,signOutStyle} = styles;
         return (
+
             <View>
             <View style={styles.MainContainer}>
                 {/*Start of header*/}
@@ -65,8 +66,11 @@ class DealBoardDetails extends Component {
 
 
                             <Text style={{}}> 6:00pm </Text>
-                            <Text style={{}}> Size: USD 100mm | Deal Details:
-                                https://tinyurl.com/VCREDITHoldings </Text>
+                            <TouchableHighlight
+                                onPress={() => Linking.openURL('https://tinyurl.com/VCREDITHoldings' )}>
+                            <Text style={{}}>
+                                Click ME</Text>
+                            </TouchableHighlight>
 
 
                         </View>

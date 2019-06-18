@@ -5,13 +5,15 @@ import {
     TouchableHighlight,
     Linking,
     Image,
-    LayoutAnimation,
-    Platform
+    LayoutAnimation
 } from 'react-native';
 import axios from 'axios';
-import {DbHeader, DbSubHeader, DbFooter, DBLOGO, SIGNOUT, DbSHButton} from './common';
+import {DbHeader, DbSubHeader, DBLOGO, SIGNOUT, DbSHButton} from './common';
 import DealBoardDetails from './DealBoardDetails';
-import SearchBar from './SearchBar';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import reducers from './reducers'
+
 
 class DealBoardList extends Component {
 
@@ -207,7 +209,8 @@ class DealBoardList extends Component {
     render() {
         const {logoStyle, signOutStyle} = styles;
         return (
-            <View >
+            <Provider store={createStore(reducers)}>
+            <View>
                 <DbHeader>
                     <TouchableHighlight
                         onPress={() => Linking.openURL('https://stage.covacap.com/')}>
@@ -222,9 +225,9 @@ class DealBoardList extends Component {
                     </TouchableHighlight>
                 </DbHeader>
                 <DbSubHeader>
-                    <DbSHButton onPress={() => {
-                        Linking.openURL('https://covacap.com/signin')
-                    }}> Nucleus</DbSHButton>
+                    {/*<DbSHButton onPress={() => {*/}
+                    {/*    Linking.openURL('https://covacap.com/signin')*/}
+                    {/*}}> Nucleus</DbSHButton>*/}
                     <DbSHButton onPress={() => {
                         Linking.openURL('https://covacap.com/signin')
                     }}>Home</DbSHButton>
@@ -234,11 +237,12 @@ class DealBoardList extends Component {
                 </DbSubHeader>
 
                 {/*<SearchBar/>*/}
-                <ScrollView contentContainerStyle={{paddingHorizontal: 10, paddingVertical: 5} }>
+                <ScrollView contentContainerStyle={{paddingHorizontal: 10, paddingVertical: 5}}>
                     {this.renderDealBoards()}
                 </ScrollView>
 
             </View>
+            </Provider>
         );
     }
 }
@@ -262,12 +266,6 @@ const styles = {
 
     },
 
-    MainContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        paddingTop: (Platform.OS === 'ios') ? 20 : 0,
-        backgroundColor: '#F5FCFF',
-    },
 
     iconStyle: {
 

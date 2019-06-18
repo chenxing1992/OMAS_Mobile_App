@@ -4,6 +4,7 @@ import {LoginHeader, LoginLogoHeader} from './components/common';
 import LoginForm from './components/LoginForm';
 import DealBoardList from './components/DealBoardList';
 
+
 class App extends Component {
     state = {
         successfulLoggedIn: false,
@@ -55,9 +56,12 @@ class App extends Component {
 
     render() {
         return (
-            <View>
+
+            <View style={{flex: 1}}>
                 {this.renderContent()}
             </View>
+
+
 
         );
     }
