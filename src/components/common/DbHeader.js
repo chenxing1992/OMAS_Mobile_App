@@ -23,7 +23,7 @@ const styles = {
         paddingTop: 35,
         paddingLeft: 20,
         elevation: 2,
-        subTitle: 'relative',
+        position: 'relative',
         justifyContent: 'space-between',
         flexDirection: 'row'
     }

@@ -8,7 +8,9 @@ export * from './LoginLogoHeader';
 export * from './DbHeader';
 export * from './DbSubHeader';
 export * from './DbSHButton';
-export * from './DbFooter'
+export * from './DbFooter';
 export const LOGINLOGONAME = require('../assets/images/logo_blue_medium.png');
 export const DBLOGO= require('../assets/images/logo_white.png');
 export const SIGNOUT= require('../assets/images/sign_out_icon.png');
+export const UPARROW= require('../assets/images/up_arrow.png');
+export const DOWNARROW= require('../assets/images/down_arrow.png');

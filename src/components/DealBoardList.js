@@ -10,136 +10,441 @@ import {
 import axios from 'axios';
 import {DbHeader, DbSubHeader, DBLOGO, SIGNOUT, DbSHButton} from './common';
 import DealBoardDetails from './DealBoardDetails';
-import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-import reducers from './reducers'
+
+//import {connect} from 'react-redux';
 
 
 class DealBoardList extends Component {
 
     constructor() {
         super();
-
         const array = [
             {
-                title: 'DEAL - Keppel Corporation Limited 5Y | 10Y SGD REGS ',
+                title: 'DEAL - Keppel Corporation Limited 5Y | 10Y SGD REGS   ',
                 dealId: 12345,
-                publishDate: '14 Sept',
+                publishDate: '27 Sept',
                 status: 'Revised',
-                subTitle: 'Sole LeadManager & Bookrunner: OCBC',
+                position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '6:00pm',
-                    details: 'Size: USD 100mm | Deal Details: https://tinyurl.com/VCREDITHoldings'
+                    firstTime: '06:00',
+                    tableTitle: 'Revised Guidance',
+                    company: 'OCBC',
+                    tableData: [
+                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                    ]
+
                 },
                     {
-                        firstTime: '4:00pm',
-                        details: 'Final Price Guidance: T+130bps Area(+/-2bps,WPIR) | 4.30-4.35%(WPIR) |Size: USD Benchmark|Timing: As early as today\'s business'
+                        firstTime: '08:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'Covalent',
+                        tableData: [
+                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    },
+                    {
+                        firstTime: '15:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'OCBC',
+                        tableData: [
+                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
                     }
                 ]
             },
             {
                 title: 'Mandate - PT Gajah Tunggal',
                 dealId: 12345,
-                publishDate: '14 Sept',
+                publishDate: '26 Sept',
                 status: 'New',
-                subTitle: '',
+                position: '',
                 sub_Category: [{
-                    firstTime: '9:30pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
+                    firstTime: '06:00',
+                    tableTitle: 'Revised Guidance',
+                    company: 'OCBC',
+                    tableData: [
+                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                    ]
+
+                },
+                    {
+                        firstTime: '08:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'Covalent',
+                        tableData: [
+                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    },
+                    {
+                        firstTime: '17:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'OCBC',
+                        tableData: [
+                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    }
+                ]
             },
             {
                 title: 'DEAL - Keppel Corporation Limited',
                 dealId: 12345,
-                publishDate: '14 Sept',
+                publishDate: '25 Sept',
                 status: 'Revised',
-                subTitle: 'Sole LeadManager & Bookrunner: OCBC',
+                position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '4:00pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
+                    firstTime: '09:00',
+                    tableTitle: 'Revised Guidance',
+                    company: 'OCBC',
+                    tableData: [
+                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                    ]
+
+
+                },
+                    {
+                        firstTime: '10:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'Covalent',
+                        tableData: [
+                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    },
+                    {
+                        firstTime: '12:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'OCBC',
+                        tableData: [
+                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    }
+                ]
             },
             {
                 title: 'Mandate - PT Gajah Tunggal',
                 dealId: 12345,
-                publishDate: '14 Sept',
+                publishDate: '24 Sept',
                 status: 'New',
-                subTitle: '',
+                position: '',
                 sub_Category: [{
-                    firstTime: '9:30pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
+                    firstTime: '06:00',
+                    tableTitle: 'Revised Guidance',
+                    company: 'OCBC',
+                    tableData: [
+                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                    ]
+
+                },
+                    {
+                        firstTime: '11:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'Covalent',
+                        tableData: [
+                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    },
+                    {
+                        firstTime: '13:00am',
+                        tableTitle: 'Initial Guidance',
+                        company: 'OCBC',
+                        tableData: [
+                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    }
+                ]
             },
             {
                 title: 'DEAL - Keppel Corporation Limited',
                 dealId: 12345,
-                publishDate: '14 Sept',
+                publishDate: '23 Sept',
                 status: 'Revised',
-                subTitle: 'Sole LeadManager & Bookrunner: OCBC',
+                position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '4:00pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
+                    firstTime: '06:00',
+                    tableTitle: 'Revised Guidance',
+                    company: 'OCBC',
+                    tableData: [
+                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                    ]
+
+                },
+                    {
+                        firstTime: '12:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'Covalent',
+                        tableData: [
+                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    },
+                    {
+                        firstTime: '14:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'OCBC',
+                        tableData: [
+                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    }
+                ]
             },
             {
                 title: 'Mandate - PT Gajah Tunggal',
                 dealId: 12345,
-                publishDate: '14 Sept',
+                publishDate: '22 Sept',
                 status: 'New',
-                subTitle: '',
+                position: '',
                 sub_Category: [{
-                    firstTime: '9:30pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
+                    firstTime: '06:00',
+                    tableTitle: 'Revised Guidance',
+                    company: 'OCBC',
+                    tableData: [
+                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                    ]
+
+                },
+                    {
+                        firstTime: '08:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'Covalent',
+                        tableData: [
+                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    },
+                    {
+                        firstTime: '15:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'OCBC',
+                        tableData: [
+                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    }
+                ]
             },
             {
                 title: 'DEAL - Keppel Corporation Limited',
                 dealId: 12345,
-                publishDate: '14 Sept',
+                publishDate: '21 Sept',
                 status: 'Revised',
-                subTitle: 'Sole LeadManager & Bookrunner: OCBC',
+                position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '4:00pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
+                    firstTime: '06:00',
+                    tableTitle: 'Revised Guidance',
+                    company: 'OCBC',
+                    tableData: [
+                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                    ]
+
+                },
+                    {
+                        firstTime: '08:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'Covalent',
+                        tableData: [
+                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    },
+                    {
+                        firstTime: '14:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'OCBC',
+                        tableData: [
+                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    }
+                ]
             },
             {
                 title: 'Mandate - PT Gajah Tunggal',
                 dealId: 12345,
-                publishDate: '14 Sept',
+                publishDate: '20 Sept',
                 status: 'New',
-                subTitle: '',
+                position: '',
                 sub_Category: [{
-                    firstTime: '9:30pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
+                    firstTime: '06:00',
+                    tableTitle: 'Revised Guidance',
+                    company: 'OCBC',
+                    tableData: [
+                        ['17Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['18Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['19Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['20Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                    ]
+
+                },
+                    {
+                        firstTime: '09:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'Covalent',
+                        tableData: [
+                            ['21Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['22Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['23Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['24Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    },
+                    {
+                        firstTime: '17:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'OCBC',
+                        tableData: [
+                            ['25Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['26Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['27Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['28Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    }
+                ]
             },
             {
                 title: 'DEAL - Keppel Corporation Limited',
                 dealId: 12345,
-                publishDate: '14 Sept',
+                publishDate: '19 Sept',
                 status: 'Revised',
-                subTitle: 'Sole LeadManager & Bookrunner: OCBC',
+                position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '4:00pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
+                    firstTime: '07:00',
+                    tableTitle: 'Revised Guidance',
+                    company: 'OCBC',
+                    tableData: [
+                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                    ]
+
+                },
+                    {
+                        firstTime: '08:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'Covalent',
+                        tableData: [
+                            ['33Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['34Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['35Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['36Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    },
+                    {
+                        firstTime: '18:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'OCBC',
+                        tableData: [
+                            ['37Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['38Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['39Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['40Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    }
+                ]
             },
             {
                 title: 'DEAL - Keppel Corporation Limited',
                 dealId: 12345,
-                publishDate: '14 Sept',
+                publishDate: '18 Sept',
                 status: 'Revised',
-                subTitle: 'Sole LeadManager & Bookrunner: OCBC',
+                position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '4:00pm',
-                    details: 'First Description Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
-                }]
+                    firstTime: '06:00',
+                    tableTitle: 'Revised Guidance',
+                    company: 'OCBC',
+                    tableData: [
+                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                    ]
+
+                },
+                    {
+                        firstTime: '08:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'Covalent',
+                        tableData: [
+                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    },
+                    {
+                        firstTime: '19:00',
+                        tableTitle: 'Initial Guidance',
+                        company: 'OCBC',
+                        tableData: [
+                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+                    }
+                ]
             },];
 
         this.state = {
-            dealBoards: [],
+
             AccordionData: [...array]
+
             // userLogout: false,
         };
     }
@@ -149,6 +454,7 @@ class DealBoardList extends Component {
         LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
 
         const array = [...this.state.AccordionData];
+
 
         array[index]['expanded'] = !array[index]['expanded'];
 
@@ -187,11 +493,14 @@ class DealBoardList extends Component {
 
 
     renderDealBoards() {
+        console.log("this is the props" + this.props);
         return (
             this.state.AccordionData.map((item, key) =>
+
                 (
                     <DealBoardDetails key={item.title} onClickFunction={this.update_Layout.bind(this, key)}
                                       item={item}/>
+
                 ))
         );
         // return this.state.dealBoards.map(deal =>
@@ -204,13 +513,17 @@ class DealBoardList extends Component {
         this.props.ToLogOut(true);
 
     };
-
+    //redux
+    // mapStateToProps = state => {
+    //
+    //     return {libraries: state.libraries};
+    // };
 
     render() {
         const {logoStyle, signOutStyle} = styles;
         return (
-            <Provider store={createStore(reducers)}>
-            <View>
+            //  <Provider store={createStore(reducers)}>
+            <View style={{flex: 1}}>
                 <DbHeader>
                     <TouchableHighlight
                         onPress={() => Linking.openURL('https://stage.covacap.com/')}>
@@ -242,21 +555,21 @@ class DealBoardList extends Component {
                 </ScrollView>
 
             </View>
-            </Provider>
+            // </Provider>
         );
     }
 }
 
 const styles = {
     logoStyle: {
-        subTitle: 'relative',
+        position: 'relative',
         top: 15,
         bottom: 10
 
 
     },
     signOutStyle: {
-        subTitle: 'relative',
+        position: 'relative',
         width: 40,
         height: 40,
         top: 15,

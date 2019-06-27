@@ -27,11 +27,11 @@ const styles = {
         paddingTop: 15,
         paddingLeft:30,
         elevation: 2,
-        subTitle: 'relative',
+        position: 'relative',
         justifyContent: 'center',
     },
     logoStyle:{
-        subTitle:'relative',
+        position:'relative',
         top:35,
 
     }
