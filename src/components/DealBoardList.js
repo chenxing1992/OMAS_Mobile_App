@@ -550,9 +550,11 @@ class DealBoardList extends Component {
                 </DbSubHeader>
 
                 {/*<SearchBar/>*/}
+                <View style={{backgroundColor: '#dbdada'}}>
                 <ScrollView contentContainerStyle={{paddingHorizontal: 10, paddingVertical: 5}}>
                     {this.renderDealBoards()}
                 </ScrollView>
+                </View>
 
             </View>
             // </Provider>

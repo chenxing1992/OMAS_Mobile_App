@@ -31,7 +31,8 @@ const styles={
     footerStyle: {
         flexDirection:'row',
         justifyContent:'flex-end',
-        paddingRight:10
+        paddingRight:10,
+        backgroundColor: '#fff'
 
     },
     textStyle:{

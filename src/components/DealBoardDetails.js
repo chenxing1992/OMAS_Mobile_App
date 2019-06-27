@@ -175,11 +175,11 @@ class DealBoardDetails extends Component {
                             {console.log('table: ' + this.state.tableData)}
                             {
 
-                                <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
+                                <Table borderStyle={{borderWidth: 2, borderColor: '#dbdada'}}>
                                     <Row data={this.state.tableHead} flexArr={[1, 2, 2]} style={styles.tbHead}
-                                         textStyle={styles.tbText}/>
+                                         textStyle={styles.tbHeaderText}/>
                                     <Rows data={this.state.tableData} flexArr={[1, 2, 2]}
-                                          textStyle={styles.tbText}/>
+                                          textStyle={styles.tbBodyText}/>
                                 </Table>
 
                             }
@@ -219,12 +219,12 @@ class DealBoardDetails extends Component {
                                     <View style={styles.table}>
 
 
-                                        <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
+                                        <Table borderStyle={{borderWidth: 2,borderColor: '#dbdada'}}>
                                             <Row data={this.state.tableHead} flexArr={[1, 2, 2]}
                                                  style={styles.tbHead}
-                                                 textStyle={styles.tbText}/>
+                                                 textStyle={styles.tbHeaderText}/>
                                             <Rows data={item.tableData} flexArr={[1, 2, 2]}
-                                                  textStyle={styles.tbText}/>
+                                                  textStyle={styles.tbBodyText}/>
                                         </Table>
 
 
@@ -290,6 +290,7 @@ const styles = {
         justifyContent: 'center',
         paddingTop: (Platform.OS === 'ios') ? 30 : 0,
         backgroundColor: '#F5FCFF',
+        borderRadius:2
 
     },
 
@@ -332,10 +333,19 @@ const styles = {
     },
     tbHead: {
         height: 40,
-        backgroundColor: '#f1f8ff'
+        backgroundColor: '#111542'
     },
-    tbText: {
-        margin: 6
+    tbHeaderText: {
+        margin: 6,
+        color: '#fff',
+        fontWeight:'bold'
+
+    },
+    tbBodyText: {
+        margin: 6,
+        color: '#000'
+
+
     }
 
 
