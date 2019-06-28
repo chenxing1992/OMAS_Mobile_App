@@ -32,7 +32,9 @@ const styles={
         flexDirection:'row',
         justifyContent:'flex-end',
         paddingRight:10,
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        borderTopWidth:1,
+        borderColor: '#dddddd',
 
     },
     textStyle:{

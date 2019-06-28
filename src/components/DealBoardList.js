@@ -26,9 +26,10 @@ class DealBoardList extends Component {
                 status: 'Revised',
                 position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '06:00',
-                    tableTitle: 'Revised Guidance',
+                    firstTime: '08:30',
+                    tableTitle: 'Initial Price Guidance',
                     company: 'OCBC',
+                    customText: '',
                     tableData: [
                         ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                         ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -38,29 +39,73 @@ class DealBoardList extends Component {
 
                 },
                     {
-                        firstTime: '08:00',
-                        tableTitle: 'Initial Guidance',
-                        company: 'Covalent',
-                        tableData: [
-                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
-                        ]
+                        firstTime: '10:00',
+                        tableTitle: 'Revised Guidance',
+                        company: 'OCBC',
+                        customText: 'Books Over $1bn (Incl. JLM Interest)',
+                        tableData: []
+
                     },
                     {
-                        firstTime: '15:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '16:00',
+                        tableTitle: 'Launched',
                         company: 'OCBC',
+                        customText: 'APAC Book Subject - 17:00HKT',
+                        tableData: []
+
+                    },
+                    {
+                        firstTime: '18:30',
+                        tableTitle: 'Final Price Guidance',
+                        company: 'OCBC',
+                        customText: '',
                         tableData: [
-                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
                         ]
+
+                    },
+
+                    {
+                        firstTime: '18:30',
+                        tableTitle: 'Launched',
+                        company: 'OCBC',
+                        customText: 'Books Over $2.2bn (Incl JLM Interest)',
+                        tableData: []
+
+                    },
+                    {
+                        firstTime: '20:00',
+                        tableTitle: 'Launched',
+                        company: 'OCBC',
+                        customText: '',
+                        tableData: [
+                            ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+
+                    },
+                    {
+                        firstTime: '21:00',
+                        tableTitle: 'Priced',
+                        company: 'OCBC',
+                        customText: '',
+                        tableData: [
+                            ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
+                            ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ]
+
                     }
+
                 ]
             },
+
             {
                 title: 'Mandate - PT Gajah Tunggal',
                 dealId: 12345,
@@ -71,6 +116,7 @@ class DealBoardList extends Component {
                     firstTime: '06:00',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
+                    customText: '',
                     tableData: [
                         ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                         ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -83,17 +129,15 @@ class DealBoardList extends Component {
                         firstTime: '08:00',
                         tableTitle: 'Initial Guidance',
                         company: 'Covalent',
-                        tableData: [
-                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
-                        ]
+                        customText: 'This is a Custom Text',
+                        tableData: []
+
                     },
                     {
                         firstTime: '17:00',
                         tableTitle: 'Initial Guidance',
                         company: 'OCBC',
+                        customText: '',
                         tableData: [
                             ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -113,6 +157,7 @@ class DealBoardList extends Component {
                     firstTime: '09:00',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
+                    customText: '',
                     tableData: [
                         ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                         ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -126,6 +171,7 @@ class DealBoardList extends Component {
                         firstTime: '10:00',
                         tableTitle: 'Initial Guidance',
                         company: 'Covalent',
+                        customText: '',
                         tableData: [
                             ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -137,6 +183,7 @@ class DealBoardList extends Component {
                         firstTime: '12:00',
                         tableTitle: 'Initial Guidance',
                         company: 'OCBC',
+                        customText: '',
                         tableData: [
                             ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -156,6 +203,7 @@ class DealBoardList extends Component {
                     firstTime: '06:00',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
+                    customText: '',
                     tableData: [
                         ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                         ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -168,6 +216,7 @@ class DealBoardList extends Component {
                         firstTime: '11:00',
                         tableTitle: 'Initial Guidance',
                         company: 'Covalent',
+                        customText: '',
                         tableData: [
                             ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -179,6 +228,7 @@ class DealBoardList extends Component {
                         firstTime: '13:00am',
                         tableTitle: 'Initial Guidance',
                         company: 'OCBC',
+                        customText: '',
                         tableData: [
                             ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -198,6 +248,7 @@ class DealBoardList extends Component {
                     firstTime: '06:00',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
+                    customText: '',
                     tableData: [
                         ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                         ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -210,6 +261,7 @@ class DealBoardList extends Component {
                         firstTime: '12:00',
                         tableTitle: 'Initial Guidance',
                         company: 'Covalent',
+                        customText: '',
                         tableData: [
                             ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -221,6 +273,7 @@ class DealBoardList extends Component {
                         firstTime: '14:00',
                         tableTitle: 'Initial Guidance',
                         company: 'OCBC',
+                        customText: '',
                         tableData: [
                             ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -240,6 +293,7 @@ class DealBoardList extends Component {
                     firstTime: '06:00',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
+                    customText: '',
                     tableData: [
                         ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                         ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -252,6 +306,7 @@ class DealBoardList extends Component {
                         firstTime: '08:00',
                         tableTitle: 'Initial Guidance',
                         company: 'Covalent',
+                        customText: '',
                         tableData: [
                             ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -263,6 +318,7 @@ class DealBoardList extends Component {
                         firstTime: '15:00',
                         tableTitle: 'Initial Guidance',
                         company: 'OCBC',
+                        customText: '',
                         tableData: [
                             ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -282,6 +338,7 @@ class DealBoardList extends Component {
                     firstTime: '06:00',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
+                    customText: '',
                     tableData: [
                         ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                         ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -294,6 +351,7 @@ class DealBoardList extends Component {
                         firstTime: '08:00',
                         tableTitle: 'Initial Guidance',
                         company: 'Covalent',
+                        customText: '',
                         tableData: [
                             ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -305,6 +363,7 @@ class DealBoardList extends Component {
                         firstTime: '14:00',
                         tableTitle: 'Initial Guidance',
                         company: 'OCBC',
+                        customText: '',
                         tableData: [
                             ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -324,6 +383,7 @@ class DealBoardList extends Component {
                     firstTime: '06:00',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
+                    customText: '',
                     tableData: [
                         ['17Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                         ['18Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -336,6 +396,7 @@ class DealBoardList extends Component {
                         firstTime: '09:00',
                         tableTitle: 'Initial Guidance',
                         company: 'Covalent',
+                        customText: '',
                         tableData: [
                             ['21Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['22Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -347,6 +408,7 @@ class DealBoardList extends Component {
                         firstTime: '17:00',
                         tableTitle: 'Initial Guidance',
                         company: 'OCBC',
+                        customText: '',
                         tableData: [
                             ['25Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['26Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -366,6 +428,7 @@ class DealBoardList extends Component {
                     firstTime: '07:00',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
+                    customText: '',
                     tableData: [
                         ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                         ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -378,6 +441,7 @@ class DealBoardList extends Component {
                         firstTime: '08:00',
                         tableTitle: 'Initial Guidance',
                         company: 'Covalent',
+                        customText: '',
                         tableData: [
                             ['33Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['34Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -389,6 +453,7 @@ class DealBoardList extends Component {
                         firstTime: '18:00',
                         tableTitle: 'Initial Guidance',
                         company: 'OCBC',
+                        customText: '',
                         tableData: [
                             ['37Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['38Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -408,6 +473,7 @@ class DealBoardList extends Component {
                     firstTime: '06:00',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
+                    customText: '',
                     tableData: [
                         ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                         ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -420,6 +486,7 @@ class DealBoardList extends Component {
                         firstTime: '08:00',
                         tableTitle: 'Initial Guidance',
                         company: 'Covalent',
+                        customText: '',
                         tableData: [
                             ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -431,6 +498,7 @@ class DealBoardList extends Component {
                         firstTime: '19:00',
                         tableTitle: 'Initial Guidance',
                         company: 'OCBC',
+                        customText: '',
                         tableData: [
                             ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
                             ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
@@ -439,7 +507,10 @@ class DealBoardList extends Component {
                         ]
                     }
                 ]
-            },];
+            }
+
+
+        ];
 
         this.state = {
 
@@ -543,7 +614,7 @@ class DealBoardList extends Component {
                     {/*}}> Nucleus</DbSHButton>*/}
                     <DbSHButton onPress={() => {
                         Linking.openURL('https://covacap.com/signin')
-                    }}>Home</DbSHButton>
+                    }}>NEWSFLOW</DbSHButton>
                     <DbSHButton onPress={() => {
                         Linking.openURL('https://covacap.com/signin')
                     }}> Analytics</DbSHButton>
@@ -551,9 +622,9 @@ class DealBoardList extends Component {
 
                 {/*<SearchBar/>*/}
                 <View style={{backgroundColor: '#dbdada'}}>
-                <ScrollView contentContainerStyle={{paddingHorizontal: 10, paddingVertical: 5}}>
-                    {this.renderDealBoards()}
-                </ScrollView>
+                    <ScrollView contentContainerStyle={{paddingHorizontal: 10, paddingVertical: 5}}>
+                        {this.renderDealBoards()}
+                    </ScrollView>
                 </View>
 
             </View>

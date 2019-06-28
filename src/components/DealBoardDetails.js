@@ -28,7 +28,8 @@ class DealBoardDetails extends Component {
 
         tableData: [],
         latestTime: [],
-        latestTableName: []
+        latestTableName: [],
+        latestCustomText: []
 
 
     };
@@ -84,31 +85,94 @@ class DealBoardDetails extends Component {
 
                 // console.log('check: ' + x.tableData)
 
-                this.setState({tableData: x.tableData, latestTime: x.firstTime, latestTableName: x.tableTitle})
+                this.setState({tableData: x.tableData, latestTime: x.firstTime, latestTableName: x.tableTitle, latestCustomText: x.customText})
             )
         )
 
 
     }
 
+    static statusColor(statusType){
+
+        if(statusType === 'New'){
+            return(
+            <Text style={{color: '#1b9c1b', fontWeight: 'bold'}}> {statusType}</Text>
+            )
+        }
+        else{
+            return(
+                <Text style={{color: '#57ade5',fontWeight:'bold'}}>{statusType} </Text>
+            )
+
+        }
+
+
+    }
+
+    checkHeaderCustomMessageDisplay(){
+
+
+        if(this.state.tableData && this.state.tableData.length) {
+            return(
+            <Table borderStyle={{borderWidth: 2, borderColor: '#dbdada'}}>
+                <Row data={this.state.tableHead} flexArr={[1, 2, 2]} style={styles.tbHead}
+                     textStyle={styles.tbHeaderText}/>
+                <Rows data={this.state.tableData} flexArr={[1, 2, 2]}
+                      textStyle={styles.tbBodyText}/>
+            </Table>
+            )
+        }else{
+            return(
+                <Text> {this.state.latestCustomText}</Text>
+            )
+
+
+        }
+    }
+
+    checkBodyCustomMessageDisplay(item){
+        if(item.tableData && item.tableData.length){
+
+            return(
+            <Table borderStyle={{borderWidth: 2,borderColor: '#dbdada'}}>
+                <Row data={this.state.tableHead} flexArr={[1, 2, 2]}
+                     style={styles.tbHead}
+                     textStyle={styles.tbHeaderText}/>
+                <Rows data={item.tableData} flexArr={[1, 2, 2]}
+                      textStyle={styles.tbBodyText}/>
+            </Table>
+            )
+        }
+        else{
+
+            return (
+                <Text> {item.customText}</Text>
+            )
+        }
+
+    }
+
+
 
     render() {
         // const {logoStyle,signOutStyle} = styles;
         return (
 
-            <View>
+            <View style={{marginBottom: 15 }}>
                 <View style={styles.MainContainer}>
                     {/*Start of header*/}
-                    <View style={{borderBottomWidth: 1, borderColor: '#000', marginBottom: 15}}>
+                    <View style={{borderBottomWidth: 1, borderColor: '#dddddd'}}>
+
+
                         <TouchableOpacity activeOpacity={0.8} onPress={this.props.onClickFunction}
                                           style={styles.category_View}>
                             {/*<View style={{ borderBottomWidth:1, borderColor:'#000'}}>*/}
 
-                            <View style={{flexDirection: 'column'}}>
+                            <View style={{flexDirection: 'column', paddingLeft: 15}}>
                                 <View style={{justifyContent: 'flex-start', flexDirection: 'row', paddingTop: 10}}>
                                     <Text> {this.props.item.publishDate}  </Text>
+                                    {DealBoardDetails.statusColor(this.props.item.status)}
 
-                                    <Text style={{color: '#25CB25'}}>{this.props.item.status} </Text>
                                 </View>
                                 <View style={{justifyContent: 'flex-start', flexDirection: 'column'}}>
                                     <Text style={{
@@ -150,7 +214,7 @@ class DealBoardDetails extends Component {
                             {/*    </View>*/}
                             {/*</View>*/}
 
-                            <View style={{paddingTop: 30, flexDirection: 'row'}}>
+                            <View style={{paddingRight: 15, paddingTop: 30, flexDirection: 'row'}}>
                                 {this.toggleArrow()}
                             </View>
 
@@ -158,10 +222,10 @@ class DealBoardDetails extends Component {
                         </TouchableOpacity>
                     </View>
 
-                    <View style={{flexDirection: 'column'}}>
+                    <View style={{flexDirection: 'column', paddingTop: 10}}>
                         <View style={{flexDirection: 'row'}}>
 
-                            <Text>
+                            <Text style={{paddingLeft:15}}>
                                 {this.state.latestTime}
                             </Text>
                             <Text style={{fontWeight: 'bold', paddingLeft: 10}}>
@@ -173,16 +237,13 @@ class DealBoardDetails extends Component {
                         <View style={styles.table}>
                             {/*{this.renderTableData()}*/}
                             {console.log('table: ' + this.state.tableData)}
-                            {
 
-                                <Table borderStyle={{borderWidth: 2, borderColor: '#dbdada'}}>
-                                    <Row data={this.state.tableHead} flexArr={[1, 2, 2]} style={styles.tbHead}
-                                         textStyle={styles.tbHeaderText}/>
-                                    <Rows data={this.state.tableData} flexArr={[1, 2, 2]}
-                                          textStyle={styles.tbBodyText}/>
-                                </Table>
+                            {this.checkHeaderCustomMessageDisplay()}
 
-                            }
+
+
+
+
 
 
                         </View>
@@ -197,14 +258,14 @@ class DealBoardDetails extends Component {
 
                         {
                             this.props.item.sub_Category.map((item) => (
-                                <View style={{flexDirection: 'column'}}>
+                                <View style={{flexDirection: 'column' ,paddingBottom: 20}}>
                                     {
 
 
                                         <View style={{flexDirection: 'row'}}>
 
 
-                                            <Text>
+                                            <Text style={{paddingLeft:15}}>
                                                 {item.firstTime}
                                             </Text>
                                             <Text style={{fontWeight: 'bold', paddingLeft: 10}}>
@@ -218,14 +279,8 @@ class DealBoardDetails extends Component {
                                     {/*//table*/}
                                     <View style={styles.table}>
 
+                                        {this.checkBodyCustomMessageDisplay(item)}
 
-                                        <Table borderStyle={{borderWidth: 2,borderColor: '#dbdada'}}>
-                                            <Row data={this.state.tableHead} flexArr={[1, 2, 2]}
-                                                 style={styles.tbHead}
-                                                 textStyle={styles.tbHeaderText}/>
-                                            <Rows data={item.tableData} flexArr={[1, 2, 2]}
-                                                  textStyle={styles.tbBodyText}/>
-                                        </Table>
 
 
                                     </View>
@@ -261,6 +316,7 @@ class DealBoardDetails extends Component {
                 </View>
                 <DbFooter dealID={this.props.item.dealId}/>
             </View>
+
         );
     }
 
@@ -288,9 +344,9 @@ const styles = {
     MainContainer: {
         flex: 1,
         justifyContent: 'center',
-        paddingTop: (Platform.OS === 'ios') ? 30 : 0,
-        backgroundColor: '#F5FCFF',
-        borderRadius:2
+       // paddingTop: (Platform.OS === 'ios') ? 30 : 0,
+        backgroundColor: '#fff',
+
 
     },
 
@@ -327,8 +383,8 @@ const styles = {
     },
     table: {
         flex: 1,
-        padding: 5,
-        paddingTop: 30,
+        padding: 15,
+        //paddingTop: 10,
         backgroundColor: '#fff'
     },
     tbHead: {
