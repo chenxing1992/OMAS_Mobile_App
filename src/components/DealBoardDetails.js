@@ -254,11 +254,11 @@ class DealBoardDetails extends Component {
 
                     {/*End of Header*/}
                     {/*Start of Section Body*/}
-                    <View style={{height: this.state.layout_Height, overflow: 'hidden'}}>
+                    <View style={{height: this.state.layout_Height, overflow: 'hidden', borderTopWidth:1, borderColor:'#dbdada'}}>
 
                         {
                             this.props.item.sub_Category.map((item) => (
-                                <View style={{flexDirection: 'column' ,paddingBottom: 20}}>
+                                <View style={{flexDirection: 'column' ,paddingBottom: 20,marginTop:10}}>
                                     {
 
 
@@ -345,7 +345,11 @@ const styles = {
         flex: 1,
         justifyContent: 'center',
        // paddingTop: (Platform.OS === 'ios') ? 30 : 0,
-        backgroundColor: '#fff',
+        backgroundColor: '#fff'
+        ,borderTopLeftRadius:10,
+        borderTopRightRadius:10,
+        borderColor:'#fff'
+
 
 
     },
@@ -380,6 +384,7 @@ const styles = {
         // alignItems: 'center',
         backgroundColor: '#fff',
         paddingBottom: 10
+
     },
     table: {
         flex: 1,

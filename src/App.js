@@ -3,9 +3,7 @@ import {View} from 'react-native'
 import {LoginHeader, LoginLogoHeader} from './components/common';
 import LoginForm from './components/LoginForm';
 import DealBoardList from './components/DealBoardList';
-// import {createStore} from "redux";
-// import reducers from "./components/reducers";
-// import {Provider} from "react-redux";
+
 
 
 class App extends Component {
@@ -37,13 +35,24 @@ class App extends Component {
 
 
     };
+    NewsFlow = (theToken) => {
+        console.log('renderNewsFlow: ' + theToken);
+        if (theToken) {
+            this.setState({
+                successfulLoggedIn: true,
+                token: theToken
+            });
+        }
+    };
 
     renderContent = () => {
         if (this.state.successfulLoggedIn) {
+
             return (
-             //   <Provider store={createStore(reducers)}>
-                <View style={{flex:1}}>
-                    <DealBoardList userToken={this.state.token} ToLogOut={this.LogOut.bind(this)}/>
+                //   <Provider store={createStore(reducers)}>
+                <View style={{flex: 1}}>
+                    <DealBoardList userToken={this.state.token} ToLogOut={this.LogOut.bind(this)}
+                                   ToNewsFlow={this.NewsFlow.bind(this)}/>
 
                     {/*<DealBoardList userToken={this.state.token}  />*/}
                 </View>
@@ -65,7 +74,6 @@ class App extends Component {
             <View style={{flex: 1}}>
                 {this.renderContent()}
             </View>
-
 
 
         );

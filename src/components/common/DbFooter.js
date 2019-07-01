@@ -12,14 +12,10 @@ const DbFooter = ({dealID}) => {
        <Text style={textStyle}>Details</Text>
        </TouchableOpacity>
 
-       <TouchableOpacity onPress={ () => {
-           Linking.openURL(`https://covacap.com/signin=${dealID}`) }} >
-       <Text style={textStyle}>Follow</Text>
-       </TouchableOpacity>
 
        <TouchableOpacity onPress={ () => {
            Linking.openURL(`https://covacap.com/signin=${dealID}`) }} >
-       <Text style={{paddingTop:10, fontSize:12, paddingBottom:10}}>Share</Text>
+       <Text style={{paddingTop:10, fontSize:12, paddingBottom:10, fontColor: '#2c2c54'}}>Share</Text>
        </TouchableOpacity>
 
    </View>
@@ -35,13 +31,17 @@ const styles={
         backgroundColor: '#fff',
         borderTopWidth:1,
         borderColor: '#dddddd',
+        borderBottomLeftRadius:10,
+        borderBottomRightRadius:10,
+
 
     },
     textStyle:{
         paddingRight:15,
         paddingTop:10,
         fontSize:12,
-        paddingBottom:10
+        paddingBottom:10,
+        fontColor:'#2c2c54'
     }
 };
 

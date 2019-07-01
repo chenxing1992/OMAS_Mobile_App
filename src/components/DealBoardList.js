@@ -584,11 +584,10 @@ class DealBoardList extends Component {
         this.props.ToLogOut(true);
 
     };
-    //redux
-    // mapStateToProps = state => {
-    //
-    //     return {libraries: state.libraries};
-    // };
+    renderNewsFlow = () => {
+      let token = this.props.userToken;
+      this.props.ToNewsFlow(token);
+    };
 
     render() {
         const {logoStyle, signOutStyle} = styles;
@@ -613,7 +612,8 @@ class DealBoardList extends Component {
                     {/*    Linking.openURL('https://covacap.com/signin')*/}
                     {/*}}> Nucleus</DbSHButton>*/}
                     <DbSHButton onPress={() => {
-                        Linking.openURL('https://covacap.com/signin')
+                        this.renderNewsFlow()
+                        //Linking.openURL('https://covacap.com/signin')
                     }}>NEWSFLOW</DbSHButton>
                     <DbSHButton onPress={() => {
                         Linking.openURL('https://covacap.com/signin')
@@ -621,7 +621,7 @@ class DealBoardList extends Component {
                 </DbSubHeader>
 
                 {/*<SearchBar/>*/}
-                <View style={{backgroundColor: '#dbdada'}}>
+                <View style={{backgroundColor: '#dbdada', flex:1 }}>
                     <ScrollView contentContainerStyle={{paddingHorizontal: 10, paddingVertical: 5}}>
                         {this.renderDealBoards()}
                     </ScrollView>
