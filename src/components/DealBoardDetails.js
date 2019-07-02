@@ -85,23 +85,27 @@ class DealBoardDetails extends Component {
 
                 // console.log('check: ' + x.tableData)
 
-                this.setState({tableData: x.tableData, latestTime: x.firstTime, latestTableName: x.tableTitle, latestCustomText: x.customText})
+                this.setState({
+                    tableData: x.tableData,
+                    latestTime: x.firstTime,
+                    latestTableName: x.tableTitle,
+                    latestCustomText: x.customText
+                })
             )
         )
 
 
     }
 
-    static statusColor(statusType){
+    static statusColor(statusType) {
 
-        if(statusType === 'New'){
-            return(
-            <Text style={{color: '#1b9c1b', fontWeight: 'bold'}}> {statusType}</Text>
+        if (statusType === 'New') {
+            return (
+                <Text style={{color: '#1b9c1b', fontWeight: 'bold'}}> {statusType}</Text>
             )
-        }
-        else{
-            return(
-                <Text style={{color: '#57ade5',fontWeight:'bold'}}>{statusType} </Text>
+        } else {
+            return (
+                <Text style={{color: '#57ade5', fontWeight: 'bold'}}>{statusType} </Text>
             )
 
         }
@@ -109,20 +113,20 @@ class DealBoardDetails extends Component {
 
     }
 
-    checkHeaderCustomMessageDisplay(){
+    checkHeaderCustomMessageDisplay() {
 
 
-        if(this.state.tableData && this.state.tableData.length) {
-            return(
-            <Table borderStyle={{borderWidth: 2, borderColor: '#dbdada'}}>
-                <Row data={this.state.tableHead} flexArr={[1, 2, 2]} style={styles.tbHead}
-                     textStyle={styles.tbHeaderText}/>
-                <Rows data={this.state.tableData} flexArr={[1, 2, 2]}
-                      textStyle={styles.tbBodyText}/>
-            </Table>
+        if (this.state.tableData && this.state.tableData.length) {
+            return (
+                <Table borderStyle={{borderWidth: 2, borderColor: '#dbdada'}}>
+                    <Row data={this.state.tableHead} flexArr={[1, 2, 2]} style={styles.tbHead}
+                         textStyle={styles.tbHeaderText}/>
+                    <Rows data={this.state.tableData} flexArr={[1, 2, 2]}
+                          textStyle={styles.tbBodyText}/>
+                </Table>
             )
-        }else{
-            return(
+        } else {
+            return (
                 <Text> {this.state.latestCustomText}</Text>
             )
 
@@ -130,20 +134,19 @@ class DealBoardDetails extends Component {
         }
     }
 
-    checkBodyCustomMessageDisplay(item){
-        if(item.tableData && item.tableData.length){
+    checkBodyCustomMessageDisplay(item) {
+        if (item.tableData && item.tableData.length) {
 
-            return(
-            <Table borderStyle={{borderWidth: 2,borderColor: '#dbdada'}}>
-                <Row data={this.state.tableHead} flexArr={[1, 2, 2]}
-                     style={styles.tbHead}
-                     textStyle={styles.tbHeaderText}/>
-                <Rows data={item.tableData} flexArr={[1, 2, 2]}
-                      textStyle={styles.tbBodyText}/>
-            </Table>
+            return (
+                <Table borderStyle={{borderWidth: 2, borderColor: '#dbdada'}}>
+                    <Row data={this.state.tableHead} flexArr={[1, 2, 2]}
+                         style={styles.tbHead}
+                         textStyle={styles.tbHeaderText}/>
+                    <Rows data={item.tableData} flexArr={[1, 2, 2]}
+                          textStyle={styles.tbBodyText}/>
+                </Table>
             )
-        }
-        else{
+        } else {
 
             return (
                 <Text> {item.customText}</Text>
@@ -153,12 +156,11 @@ class DealBoardDetails extends Component {
     }
 
 
-
     render() {
         // const {logoStyle,signOutStyle} = styles;
         return (
 
-            <View style={{marginBottom: 15 }}>
+            <View style={{marginBottom: 15}}>
                 <View style={styles.MainContainer}>
                     {/*Start of header*/}
                     <View style={{borderBottomWidth: 1, borderColor: '#dddddd'}}>
@@ -225,7 +227,7 @@ class DealBoardDetails extends Component {
                     <View style={{flexDirection: 'column', paddingTop: 10}}>
                         <View style={{flexDirection: 'row'}}>
 
-                            <Text style={{paddingLeft:15}}>
+                            <Text style={{paddingLeft: 15}}>
                                 {this.state.latestTime}
                             </Text>
                             <Text style={{fontWeight: 'bold', paddingLeft: 10}}>
@@ -241,11 +243,6 @@ class DealBoardDetails extends Component {
                             {this.checkHeaderCustomMessageDisplay()}
 
 
-
-
-
-
-
                         </View>
 
 
@@ -254,18 +251,23 @@ class DealBoardDetails extends Component {
 
                     {/*End of Header*/}
                     {/*Start of Section Body*/}
-                    <View style={{height: this.state.layout_Height, overflow: 'hidden', borderTopWidth:1, borderColor:'#dbdada'}}>
+                    <View style={{
+                        height: this.state.layout_Height,
+                        overflow: 'hidden',
+                        borderTopWidth: 1,
+                        borderColor: '#dbdada'
+                    }}>
 
                         {
                             this.props.item.sub_Category.map((item) => (
-                                <View style={{flexDirection: 'column' ,paddingBottom: 20,marginTop:10}}>
+                                <View style={{flexDirection: 'column', paddingBottom: 20, marginTop: 10}}>
                                     {
 
 
                                         <View style={{flexDirection: 'row'}}>
 
 
-                                            <Text style={{paddingLeft:15}}>
+                                            <Text style={{paddingLeft: 15}}>
                                                 {item.firstTime}
                                             </Text>
                                             <Text style={{fontWeight: 'bold', paddingLeft: 10}}>
@@ -280,7 +282,6 @@ class DealBoardDetails extends Component {
                                     <View style={styles.table}>
 
                                         {this.checkBodyCustomMessageDisplay(item)}
-
 
 
                                     </View>
@@ -344,12 +345,11 @@ const styles = {
     MainContainer: {
         flex: 1,
         justifyContent: 'center',
-       // paddingTop: (Platform.OS === 'ios') ? 30 : 0,
+        // paddingTop: (Platform.OS === 'ios') ? 30 : 0,
         backgroundColor: '#fff'
-        ,borderTopLeftRadius:10,
-        borderTopRightRadius:10,
-        borderColor:'#fff'
-
+        , borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+        borderColor: '#fff'
 
 
     },
@@ -399,7 +399,7 @@ const styles = {
     tbHeaderText: {
         margin: 6,
         color: '#fff',
-        fontWeight:'bold'
+        fontWeight: 'bold'
 
     },
     tbBodyText: {

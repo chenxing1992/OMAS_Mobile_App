@@ -5,14 +5,12 @@ import {
     TouchableHighlight,
     Linking,
     Image,
-    LayoutAnimation
+    LayoutAnimation,
+    RefreshControl
 } from 'react-native';
 import axios from 'axios';
 import {DbHeader, DbSubHeader, DBLOGO, SIGNOUT, DbSHButton} from './common';
 import DealBoardDetails from './DealBoardDetails';
-
-//import {connect} from 'react-redux';
-
 
 class DealBoardList extends Component {
 
@@ -514,8 +512,9 @@ class DealBoardList extends Component {
 
         this.state = {
 
-            AccordionData: [...array]
-
+            AccordionData: [...array],
+            refreshing: false,
+            dealBoards: []
             // userLogout: false,
         };
     }
@@ -552,8 +551,31 @@ class DealBoardList extends Component {
         axios.get(URL, {headers: {'xauth-token': token}})
             .then(response => {
                 // If request is good...
-                console.log(response.data);
+                console.log('Refresh Token Data: ' + response.data);
                 return this.setState({dealBoards: response.data})
+            })
+            .catch((error) => {
+                console.log('error ' + error);
+            });
+
+
+    }
+    fetchData(){
+        let jwtDecode = require('jwt-decode');
+        let token = this.props.userToken;
+        let decoded = jwtDecode(token);
+        //this.setState({userPrivateKey: decoded.userPk, userToken: token});
+
+        //const {userPrivateKey, userToken} = this.state;
+        const URL = `https://stage.covacap.com/listjson/deal?id=${decoded.userPk};tname=NOTIFICATIONS`;
+        //console.log('The url is: ' + userPrivateKey);
+
+
+        axios.get(URL, {headers: {'xauth-token': token}})
+            .then(response => {
+                // If request is good...
+                console.log('Refresh Page Of New Data: ' + response.data);
+                return this.setState({dealBoards: response.data, refreshing:false})
             })
             .catch((error) => {
                 console.log('error ' + error);
@@ -574,9 +596,7 @@ class DealBoardList extends Component {
 
                 ))
         );
-        // return this.state.dealBoards.map(deal =>
-        //     <DealBoardDetails key={deal.Deal_Pk} deal={deal}/>
-        // );
+
     }
 
     renderLogout = () => {
@@ -585,8 +605,13 @@ class DealBoardList extends Component {
 
     };
     renderNewsFlow = () => {
-      let token = this.props.userToken;
-      this.props.ToNewsFlow(token);
+        let token = this.props.userToken;
+        this.props.ToNewsFlow(token);
+    };
+
+    _onRefresh=()=> {
+        this.setState({refreshing: true});
+        this.fetchData();
     };
 
     render() {
@@ -621,8 +646,13 @@ class DealBoardList extends Component {
                 </DbSubHeader>
 
                 {/*<SearchBar/>*/}
-                <View style={{backgroundColor: '#dbdada', flex:1 }}>
-                    <ScrollView contentContainerStyle={{paddingHorizontal: 10, paddingVertical: 5}}>
+                <View style={{backgroundColor: '#dbdada', flex: 1}}>
+                    <ScrollView contentContainerStyle={{paddingHorizontal: 10, paddingVertical: 5}}
+                                refreshControl={
+                                    <RefreshControl refreshing={this.state.refreshing} onRefresh={this._onRefresh}/>
+                                }
+                    >
+
                         {this.renderDealBoards()}
                     </ScrollView>
                 </View>

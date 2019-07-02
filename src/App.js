@@ -5,7 +5,6 @@ import LoginForm from './components/LoginForm';
 import DealBoardList from './components/DealBoardList';
 
 
-
 class App extends Component {
     state = {
         successfulLoggedIn: false,
