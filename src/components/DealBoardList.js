@@ -551,7 +551,7 @@ class DealBoardList extends Component {
         axios.get(URL, {headers: {'xauth-token': token}})
             .then(response => {
                 // If request is good...
-                console.log('Refresh Token Data: ' + response.data);
+                console.log('Data from componentWillMount: ' + response.data);
                 return this.setState({dealBoards: response.data})
             })
             .catch((error) => {
@@ -574,7 +574,7 @@ class DealBoardList extends Component {
         axios.get(URL, {headers: {'xauth-token': token}})
             .then(response => {
                 // If request is good...
-                console.log('Refresh Page Of New Data: ' + response.data);
+                console.log('Refresh Page Of New Data: ' + JSON.stringify(response.data));
                 return this.setState({dealBoards: response.data, refreshing:false})
             })
             .catch((error) => {

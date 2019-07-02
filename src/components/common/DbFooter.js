@@ -16,7 +16,7 @@ const DbFooter = ({dealID}) => {
             <TouchableOpacity onPress={() => {
                 Linking.openURL(`https://covacap.com/signin=${dealID}`)
             }}>
-                <Text style={{paddingTop: 10, fontSize: 12, paddingBottom: 10, fontColor: '#2c2c54'}}>Share</Text>
+                <Text style={{paddingTop: 10, fontSize: 12, paddingBottom: 10, color: '#2c2c54'}}>Share</Text>
             </TouchableOpacity>
 
         </View>
@@ -42,7 +42,7 @@ const styles = {
         paddingTop: 10,
         fontSize: 12,
         paddingBottom: 10,
-        fontColor: '#2c2c54'
+        color: '#2c2c54'
     }
 };
 
