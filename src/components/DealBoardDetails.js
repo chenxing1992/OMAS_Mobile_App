@@ -5,26 +5,21 @@ import {
     Alert,
     Text,
     TouchableOpacity,
-    Platform, TouchableHighlight, Linking
+
 } from 'react-native';
 
 import {DbFooter, UPARROW, DOWNARROW} from './common';
-import {Table, TableWrapper, Row, Rows, Col, Cols, Cell} from 'react-native-table-component';
+import {Table, Row, Rows} from 'react-native-table-component';
 
 
 class DealBoardDetails extends Component {
-    //const {Deal_Pk, User_Fk, Fis_Issuer_Fk, Content_Firstline, Content_Sec_Line, Dflag, Noofmins, Notice_Time, IDENT} = deal;
+
 
     state = {
         layout_Height: 0,
 
         tableHead: ['Tenor', 'Price', 'Size'],
-        // tableData: [
-        //     ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-        //     ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-        //     ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-        //     ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
-        // ]
+
 
         tableData: [],
         latestTime: [],
@@ -103,8 +98,16 @@ class DealBoardDetails extends Component {
             return (
                 <Text style={{color: '#1b9c1b', fontWeight: 'bold'}}> {statusType}</Text>
             )
-        } else {
+        } else if (statusType === 'Launched') {
             return (
+                <Text style={{color: '#1b9c1b', fontWeight: 'bold'}}> {statusType}</Text>
+            )
+        } else if (statusType === 'Priced') {
+            return (
+                <Text style={{color: '#1b9c1b', fontWeight: 'bold'}}> {statusType}</Text>
+            )
+        } else {
+            return ( //Update
                 <Text style={{color: '#57ade5', fontWeight: 'bold'}}>{statusType} </Text>
             )
 
@@ -194,32 +197,6 @@ class DealBoardDetails extends Component {
                                 </View>
                             </View>
 
-                            {/*<View style={{flex: 1, justifyContent: 'space-between'}}>*/}
-                            {/*    <Text style={{flexWrap: 'wrap'}}>{this.props.item.title} </Text>*/}
-                            {/*    <Text style={{*/}
-                            {/*        flexWrap: 'wrap',*/}
-                            {/*        paddingTop: 5,*/}
-                            {/*        color: '#A9A9A9'*/}
-                            {/*    }}> {this.props.item.position} </Text>*/}
-                            {/*    <View style={{paddingTop: 10, alignItems: 'flex-start', flexWrap: 'wrap'}}>*/}
-
-
-                            {/*        <Text style={{}}> 6:00pm </Text>*/}
-                            {/*        /!*<TouchableHighlight*!/*/}
-                            {/*        /!*    onPress={() => Linking.openURL('https://tinyurl.com/VCREDITHoldings' )}>*!/*/}
-                            {/*        /!*<Text style={{}}>*!/*/}
-                            {/*        /!*    Click ME</Text>*!/*/}
-                            {/*        /!*</TouchableHighlight>*!/*/}
-                            {/*        <Text style={{}}> Size: USD 100mm | Deal Details: https://tinyurl.com/VCREDITHoldings  </Text>*/}
-
-
-                            {/*    </View>*/}
-                            {/*</View>*/}
-
-                            <View style={{paddingRight: 15, paddingTop: 30, flexDirection: 'row'}}>
-                                {this.toggleArrow()}
-                            </View>
-
 
                         </TouchableOpacity>
                     </View>
@@ -290,24 +267,6 @@ class DealBoardDetails extends Component {
                                 </View>
 
 
-
-
-
-
-
-                                // this.props.item.sub_Category.map((item, key) => (
-                                //
-                                //     <TouchableOpacity key={key} style={styles.sub_Category_Text}
-                                //                       onPress={this.show_Selected_Category.bind(this, item.title)}>
-                                //
-                                //         <Text style={{color: '#1E5AFF'}}> {item.firstTime} </Text>
-                                //         <Text style={{paddingTop: 10, flexWrap: 'wrap'}}> {item.details} </Text>
-                                //
-                                //         <View style={{width: '100%', height: 1, backgroundColor: '#000'}}/>
-                                //
-                                //     </TouchableOpacity>
-                                //
-                                // ))
                             ))
                         }
 

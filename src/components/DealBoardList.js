@@ -21,24 +21,24 @@ class DealBoardList extends Component {
                 title: 'DEAL - Keppel Corporation Limited 5Y | 10Y SGD REGS   ',
                 dealId: 12345,
                 publishDate: '27 Sept',
-                status: 'Revised',
+                status: 'Update',
                 position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '08:30',
+                    firstTime: '08:30:10 AM',
                     tableTitle: 'Initial Price Guidance',
                     company: 'OCBC',
                     customText: '',
                     tableData: [
-                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                        ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                        ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                        ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                     ]
 
                 },
                     {
-                        firstTime: '10:00',
-                        tableTitle: 'Revised Guidance',
+                        firstTime: '10:00:10 AM',
+                        tableTitle: 'Update',
                         company: 'OCBC',
                         customText: 'Books Over $1bn (Incl. JLM Interest)',
                         tableData: []
@@ -46,57 +46,57 @@ class DealBoardList extends Component {
                     },
                     {
                         firstTime: '16:00',
-                        tableTitle: 'Launched',
+                        tableTitle: 'Update',
                         company: 'OCBC',
                         customText: 'APAC Book Subject - 17:00HKT',
                         tableData: []
 
                     },
                     {
-                        firstTime: '18:30',
+                        firstTime: '18:30:20 PM',
                         tableTitle: 'Final Price Guidance',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps (The Number)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps (The Number)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps (The Number)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps (The Number)', 'USD Benchmark']
                         ]
 
                     },
 
                     {
-                        firstTime: '18:30',
-                        tableTitle: 'Launched',
+                        firstTime: '18:30:12 PM',
+                        tableTitle: 'Update',
                         company: 'OCBC',
                         customText: 'Books Over $2.2bn (Incl JLM Interest)',
                         tableData: []
 
                     },
                     {
-                        firstTime: '20:00',
+                        firstTime: '20:00:20 PM',
                         tableTitle: 'Launched',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps', '200mm'],
+                            ['6Y', '3mL + 140bps', '200mm'],
+                            ['7Y', '3mL + 210bps', '200mm'],
+                            ['8Y', '3mL + 220bps', '200mm']
                         ]
 
                     },
                     {
-                        firstTime: '21:00',
+                        firstTime: '21:00:20 PM',
                         tableTitle: 'Priced',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps', '200mm'],
+                            ['6Y', '3mL + 140bps', '200mm'],
+                            ['7Y', '3mL + 210bps', '200mm'],
+                            ['8Y', '3mL + 220bps', '200mm']
                         ]
 
                     }
@@ -111,36 +111,36 @@ class DealBoardList extends Component {
                 status: 'New',
                 position: '',
                 sub_Category: [{
-                    firstTime: '06:00',
-                    tableTitle: 'Revised Guidance',
+                    firstTime: '06:00:00 AM',
+                    tableTitle: 'Final Price Guidance',
                     company: 'OCBC',
                     customText: '',
                     tableData: [
-                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ['5Y', '3mL + 120bps (The Number)', 'USD Benchmark'],
+                        ['6Y', '3mL + 140bps (The Number)', 'USD Benchmark'],
+                        ['7Y', '3mL + 210bps (The Number)', 'USD Benchmark'],
+                        ['8Y', '3mL + 220bps (The Number)', 'USD Benchmark']
                     ]
 
                 },
                     {
-                        firstTime: '08:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '08:00:12 AM',
+                        tableTitle: 'Update',
                         company: 'Covalent',
                         customText: 'This is a Custom Text',
                         tableData: []
 
                     },
                     {
-                        firstTime: '17:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '17:00:20 PM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     }
                 ]
@@ -149,44 +149,44 @@ class DealBoardList extends Component {
                 title: 'DEAL - Keppel Corporation Limited',
                 dealId: 12345,
                 publishDate: '25 Sept',
-                status: 'Revised',
+                status: 'Update',
                 position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '09:00',
-                    tableTitle: 'Revised Guidance',
+                    firstTime: '09:00:10 AM',
+                    tableTitle: 'Final Price Guidance',
                     company: 'OCBC',
                     customText: '',
                     tableData: [
-                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ['5Y', '3mL + 120bps (The Number)', 'USD Benchmark'],
+                        ['6Y', '3mL + 140bps (The Number)', 'USD Benchmark'],
+                        ['7Y', '3mL + 210bps (The Number)', 'USD Benchmark'],
+                        ['8Y', '3mL + 220bps (The Number)', 'USD Benchmark']
                     ]
 
 
                 },
                     {
-                        firstTime: '10:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '10:00:20 AM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'Covalent',
                         customText: '',
                         tableData: [
-                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     },
                     {
-                        firstTime: '12:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '12:00:22 PM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     }
                 ]
@@ -198,40 +198,40 @@ class DealBoardList extends Component {
                 status: 'New',
                 position: '',
                 sub_Category: [{
-                    firstTime: '06:00',
-                    tableTitle: 'Revised Guidance',
+                    firstTime: '06:00:22 AM',
+                    tableTitle: 'Revised Price Guidance',
                     company: 'OCBC',
                     customText: '',
                     tableData: [
-                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ['5Y', '3mL + 120bps', '200mm'],
+                        ['6Y', '3mL + 140bps', '200mm'],
+                        ['7Y', '3mL + 210bps', '200mm'],
+                        ['8Y', '3mL + 220bps', '200mm']
                     ]
 
                 },
                     {
-                        firstTime: '11:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '11:00:20 AM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'Covalent',
                         customText: '',
                         tableData: [
-                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     },
                     {
-                        firstTime: '13:00am',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '13:00:20 PM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     }
                 ]
@@ -240,43 +240,43 @@ class DealBoardList extends Component {
                 title: 'DEAL - Keppel Corporation Limited',
                 dealId: 12345,
                 publishDate: '23 Sept',
-                status: 'Revised',
+                status: 'Update',
                 position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '06:00',
-                    tableTitle: 'Revised Guidance',
+                    firstTime: '06:00:22 AM',
+                    tableTitle: 'Revised Price Guidance',
                     company: 'OCBC',
                     customText: '',
                     tableData: [
-                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ['5Y', '3mL + 120bps', '200mm'],
+                        ['6Y', '3mL + 140bps', '200mm'],
+                        ['7Y', '3mL + 210bps', '200mm'],
+                        ['8Y', '3mL + 220bps', '200mm']
                     ]
 
                 },
                     {
-                        firstTime: '12:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '12:00:22 PM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'Covalent',
                         customText: '',
                         tableData: [
-                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     },
                     {
-                        firstTime: '14:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '14:00:22 PM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     }
                 ]
@@ -288,40 +288,40 @@ class DealBoardList extends Component {
                 status: 'New',
                 position: '',
                 sub_Category: [{
-                    firstTime: '06:00',
-                    tableTitle: 'Revised Guidance',
+                    firstTime: '06:00:22 AM',
+                    tableTitle: 'Revised Price Guidance',
                     company: 'OCBC',
                     customText: '',
                     tableData: [
-                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ['5Y', '3mL + 120bps', '200mm'],
+                        ['6Y', '3mL + 140bps', '200mm'],
+                        ['7Y', '3mL + 210bps', '200mm'],
+                        ['8Y', '3mL + 220bps', '200mm']
                     ]
 
                 },
                     {
-                        firstTime: '08:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '08:00:22 AM',
+                        tableTitle: 'Initial PriceGuidance',
                         company: 'Covalent',
                         customText: '',
                         tableData: [
-                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     },
                     {
-                        firstTime: '15:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '15:00:22 PM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     }
                 ]
@@ -330,43 +330,43 @@ class DealBoardList extends Component {
                 title: 'DEAL - Keppel Corporation Limited',
                 dealId: 12345,
                 publishDate: '21 Sept',
-                status: 'Revised',
+                status: 'Update',
                 position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '06:00',
+                    firstTime: '06:00:22 AM',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
                     customText: '',
                     tableData: [
-                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ['5Y', '3mL + 120bps', '200mm'],
+                        ['6Y', '3mL + 140bps', '200mm'],
+                        ['7Y', '3mL + 210bps', '200mm'],
+                        ['8Y', '3mL + 220bps', '200mm']
                     ]
 
                 },
                     {
-                        firstTime: '08:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '08:00:23 AM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'Covalent',
                         customText: '',
                         tableData: [
-                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     },
                     {
-                        firstTime: '14:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '14:00:44 PM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     }
                 ]
@@ -378,40 +378,40 @@ class DealBoardList extends Component {
                 status: 'New',
                 position: '',
                 sub_Category: [{
-                    firstTime: '06:00',
+                    firstTime: '06:00:32 AM',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
                     customText: '',
                     tableData: [
-                        ['17Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['18Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['19Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['20Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ['5Y', '3mL + 120bps', '200mm'],
+                        ['6Y', '3mL + 140bps', '200mm'],
+                        ['7Y', '3mL + 210bps', '200mm'],
+                        ['8Y', '3mL + 220bps', '200mm']
                     ]
 
                 },
                     {
-                        firstTime: '09:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '09:00:11 AM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'Covalent',
                         customText: '',
                         tableData: [
-                            ['21Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['22Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['23Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['24Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     },
                     {
-                        firstTime: '17:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '17:00:33 PM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['25Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['26Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['27Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['28Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     }
                 ]
@@ -420,43 +420,43 @@ class DealBoardList extends Component {
                 title: 'DEAL - Keppel Corporation Limited',
                 dealId: 12345,
                 publishDate: '19 Sept',
-                status: 'Revised',
+                status: 'Update',
                 position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '07:00',
+                    firstTime: '07:00:22 AM',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
                     customText: '',
                     tableData: [
-                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ['5Y', '3mL + 120bps', '200mm'],
+                        ['6Y', '3mL + 140bps', '200mm'],
+                        ['7Y', '3mL + 210bps', '200mm'],
+                        ['8Y', '3mL + 220bps', '200mm']
                     ]
 
                 },
                     {
-                        firstTime: '08:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '08:00:33 AM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'Covalent',
                         customText: '',
                         tableData: [
-                            ['33Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['34Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['35Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['36Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     },
                     {
-                        firstTime: '18:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '18:00:33 PM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['37Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['38Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['39Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['40Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     }
                 ]
@@ -465,43 +465,43 @@ class DealBoardList extends Component {
                 title: 'DEAL - Keppel Corporation Limited',
                 dealId: 12345,
                 publishDate: '18 Sept',
-                status: 'Revised',
+                status: 'Update',
                 position: 'Sole LeadManager & Bookrunner: OCBC',
                 sub_Category: [{
-                    firstTime: '06:00',
+                    firstTime: '06:00:33 AM',
                     tableTitle: 'Revised Guidance',
                     company: 'OCBC',
                     customText: '',
                     tableData: [
-                        ['5Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['6Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['7Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                        ['8Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                        ['5Y', '3mL + 120bps', '200mm'],
+                        ['6Y', '3mL + 140bps', '200mm'],
+                        ['7Y', '3mL + 210bps', '200mm'],
+                        ['8Y', '3mL + 220bps', '200mm']
                     ]
 
                 },
                     {
-                        firstTime: '08:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '08:00:34 AM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'Covalent',
                         customText: '',
                         tableData: [
-                            ['9Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['10Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['11Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['12Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     },
                     {
-                        firstTime: '19:00',
-                        tableTitle: 'Initial Guidance',
+                        firstTime: '19:00:34 PM',
+                        tableTitle: 'Initial Price Guidance',
                         company: 'OCBC',
                         customText: '',
                         tableData: [
-                            ['13Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['14Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['15Y', '3mL + 120 - 135 bps Area', '200mm (Area)'],
-                            ['16Y', '3mL + 120 - 135 bps Area', '200mm (Area)']
+                            ['5Y', '3mL + 120bps - 150bps (Area)', 'USD Benchmark'],
+                            ['6Y', '3mL + 140bps - 150bps (Area)', 'USD Benchmark'],
+                            ['7Y', '3mL + 210bps - 260bps (Area)', 'USD Benchmark'],
+                            ['8Y', '3mL + 220bps - 300bps (Area)', 'USD Benchmark']
                         ]
                     }
                 ]
@@ -515,7 +515,7 @@ class DealBoardList extends Component {
             AccordionData: [...array],
             refreshing: false,
             dealBoards: []
-            // userLogout: false,
+
         };
     }
 
@@ -560,7 +560,8 @@ class DealBoardList extends Component {
 
 
     }
-    fetchData(){
+
+    fetchData() {
         let jwtDecode = require('jwt-decode');
         let token = this.props.userToken;
         let decoded = jwtDecode(token);
@@ -575,7 +576,7 @@ class DealBoardList extends Component {
             .then(response => {
                 // If request is good...
                 console.log('Refresh Page Of New Data: ' + JSON.stringify(response.data));
-                return this.setState({dealBoards: response.data, refreshing:false})
+                return this.setState({dealBoards: response.data, refreshing: false})
             })
             .catch((error) => {
                 console.log('error ' + error);
@@ -609,7 +610,7 @@ class DealBoardList extends Component {
         this.props.ToNewsFlow(token);
     };
 
-    _onRefresh=()=> {
+    _onRefresh = () => {
         this.setState({refreshing: true});
         this.fetchData();
     };
@@ -642,7 +643,7 @@ class DealBoardList extends Component {
                     }}>NEWSFLOW</DbSHButton>
                     <DbSHButton onPress={() => {
                         Linking.openURL('https://covacap.com/signin')
-                    }}> Analytics</DbSHButton>
+                    }}> ANALYTICS</DbSHButton>
                 </DbSubHeader>
 
                 {/*<SearchBar/>*/}
