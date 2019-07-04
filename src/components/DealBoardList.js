@@ -4,14 +4,14 @@ import {
     ScrollView,
     TouchableHighlight,
     Linking,
-    Image,
+
     LayoutAnimation,
     RefreshControl
 } from 'react-native';
 import axios from 'axios';
 import {DbHeader, DbSubHeader, DBLOGO, SIGNOUT, DbSHButton} from './common';
 import DealBoardDetails from './DealBoardDetails';
-
+import ImageLogo from 'react-native-remote-svg'
 class DealBoardList extends Component {
 
     constructor() {
@@ -623,7 +623,8 @@ class DealBoardList extends Component {
                 <DbHeader>
                     <TouchableHighlight
                         onPress={() => Linking.openURL('https://stage.covacap.com/')}>
-                        <Image source={DBLOGO} style={logoStyle}/>
+                        <ImageLogo source={DBLOGO} style={logoStyle}/>
+
                     </TouchableHighlight>
                     <TouchableHighlight
 
